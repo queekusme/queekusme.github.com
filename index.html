@@ -4,36 +4,111 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Coming Soon!</title>
+    <title>Queekus.com</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet" >
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="http://queekus.com/favicon.ico">
+    <style type="text/css">
+      a:hover{ text-decoration: none; }
+    </style>
   </head>
-  <body>
-    <div style="text-align: center;" class="container">
-      <h1>New Site - <small>Coming Soon</small></h1>
-      
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"><i class="fa fa-question-circle-o" aria-hidden="true"></i> What happened to the old one </button>
+  <body id="home">
+
+    <div class="navbar navbar-default navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">queekus.com</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav"> 
+            <li class=""><a href="#home">Home</a></li>
+            <li class=""><a href="#portfolio">Portfolio</a></li>
+            <li class=""><a href="#contact">Contact Me</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel"><i class="fa fa-question-circle-o" aria-hidden="true"></i> What happened to the old one</h4>
+    <div class="container" style="margin-top:100px;">
+      <div class="jumbotron">
+        <h1>Welcome</h1>
+        <div class="alert alert-info" role="alert">COMING SOON</div>
+      </div>
+    </div>
+
+    <div class="container" id="portfolio">
+      <div class="jumbotron">
+        <h1>Portfolio</h1>
+        
+        <div class="row">
+
+          <div class="col-xs-12 col-md-3">
+            <a href="https://github.com/queekusme/Lotro-Virtues-Source" class="thumbnail">
+              <img src="https://camo.githubusercontent.com/513318461da3ee602879549e1110e79a1b55e3fd/687474703a2f2f692e696d6775722e636f6d2f514e47477a68682e706e672532303d35313078343230253232" alt="...">
+              <div class="caption">
+                <h3><b>Lotro Virtues</b></h3>
+                <p>Small Java Program which displays and filters Virtue Deeds included in Lord of the Rings Online.</p>
+              </div>
+            </a>
           </div>
-          <div class="modal-body">
-            <ul class="list-group">
-              <li class="list-group-item list-group-item-danger">Hosting was up and too expensive</li>
-              <li class="list-group-item list-group-item-info">Planned to redesign at some point anyway</li>
-              <li class="list-group-item list-group-item-success">Get to try out new things #GithubPages</li>
-              <li class="list-group-item list-group-item-danger">Old site was getting stagnant and too much spam</li>
-              <li class="list-group-item list-group-item-success">Why not?</li>
-            </ul>
+          <div class="col-xs-12 col-md-3">
+            <a href="https://play.google.com/store/apps/details?id=com.queekus.wat" class="thumbnail">
+              <img src="img/wat.jpg" alt="..." style="width:100%;height:auto;">
+              <div class="caption">
+                <h3><b>Wat (Android Only)</b></h3>
+                <p>This is my first attempt at an app using the Corona SDKs, It will probably not be updated further.</p>
+              </div>
+            </a>
           </div>
+          <div class="col-xs-12 col-md-3">
+            <a href="http://minecraft.curseforge.com/projects/test-tube-animals" class="thumbnail">
+              <img src="http://media-elerium.cursecdn.com/avatars/41/851/636001318143213675.png" alt="...">
+              <div class="caption">
+                <h3><b>Test Tube Animals</b></h3>
+                <p>Test Tube animals is my first released mod for Minecraft.</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-xs-12 col-md-3">
+            <a href="#" class="thumbnail">
+              <img src="http://placehold.it/200x200" alt="...">
+              <div class="caption">
+                <h3><b>Coming Soon</b></h3>
+                <p>...</p>
+              </div>
+            </a>
+          </div>
+
         </div>
+
+        <!-- 
+          <div class="col-xs-12 col-md-3">
+            <a href="#" class="thumbnail">
+              <img src="http://placehold.it/200x200" alt="...">
+              <div class="caption">
+                <h3><b>Thumbnail label</b></h3>
+                <p>...</p>
+              </div>
+            </a>
+          </div>
+        -->
+          
+      </div>
+    </div>
+
+    <div class="container" id="contact">
+      <div class="jumbotron">
+        <h1>Contact Me</h1>
+        <ul class="list-group">
+          <li class="list-group-item"><p><a href="http://twitter.com/queekusme"><i class="fa fa-twitter" aria-hidden="true"></i> Queekusme</a></p></li>
+          <li class="list-group-item"><p><a href="mailto:&#109;&#105;&#107;&#101;&#106;&#111;&#115;&#119;&#097;&#108;&#100;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;"><i class="fa fa-envelope" aria-hidden="true"></i> &#109;&#105;&#107;&#101;&#106;&#111;&#115;&#119;&#097;&#108;&#100;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a></p></li>
+        </ul>
       </div>
     </div>
 

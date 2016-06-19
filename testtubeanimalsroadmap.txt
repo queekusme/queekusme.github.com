@@ -1,0 +1,75 @@
+[1.1.0] NEXT RELEASE, ADDITIONS LIKELY, CHANGES AND REMOVALS UNLIKELY
+
+Added:
+- Now actually using the config file rather than just generating a blank unused file
+- Opium Poppy (crop and seeds), grown as usual on farmland
+- Opium Latex, Smelted into:
+- Opium
+
+- Opiate Anaesthetic (Shapeless Opium + Empty Syringe), requires Needle, prevents mobs from performing AI for a configurable amount of time (Default: 5 minutes)
+
+- Gene Table, Split (100%) DNA down into genes and rebuild them back into new DNA (Includes Restricted Hopper Automation, Treat it like a Crafting Bench! )
+- Genes (Multiple types)
+
+- Ore Dictionary references for: (If you know of any more which should be added, please open an issue as "enhancement")
+    - Iron Wire as wireIron
+    - Gold Wire as wireGold
+    - Salt as itemSalt and dustSalt
+    - Unprepared Steel Ingot as ingotUnpreparedSteel
+    - Steel Ingot as ingotSteel
+    - Neodymium as ingotNeodymium
+    - Monazite as oreMonazite
+    - Opium Poppy Seeds as seedPoppy
+- Modified some recipes to use Ore Dictionary references:
+    - Iron and Gold dusted slime balls can be crafted with any slimeball registered with "slimeball" + any dust registered "dustIron" or "dustGold" for the respective item.
+
+- Added JEI Compatibility
+    - GeneTable break-down and re-construction recipes now show
+    - Some items have descriptions providing further information
+        - Syringes
+        - Test Tubes
+
+Changes:
+- Incubator now has a slot of Opiate anaesthetic, works exactly the same as injecting the mob by hand however doesn't require a needle and works automatically
+- Incubator now can spawn baby variants of mobs, where applicable and when defined in the config file (Default: True)
+- Hopper automation added for: (Mods that respect ISidedInventory should also work as expected)
+    - Incubator
+    - Centrifuge
+    - DnaSplicer
+- Ender Dragon now only spawns in the end, can be turned off in the config file (Default: True)
+- Changed the output stack size for nutrients depending on which item is used to craft it from a static value of 16 to:
+    - Fetid Nutrients
+        - Rotten Flesh: 8
+    - Aqua Nutrients
+        - Fish (Any): 4
+    - Muscle Nutrients
+        - Raw Pork chop: 8
+        - Raw Steak: 8
+        - Raw Mutton: 8
+        - Raw Rabbit: 16
+        - Rabbit's foot: 2
+    - Carbonated Nutrients
+        - Coal/Charcoal: 32
+    - Osteo Nutrients
+        - Bone: 12
+        - Bone Meal: 4 (NEW IN THIS UPDATE)
+    - Pyro Nutrients
+        - Blaze Powder: 24
+        - Gunpowder: 8
+
+Fixes:
+- Fixed an issue where the Incubator could continue counting a nutrient down past 0 until a nutrient was considered complete
+
+[1.2.0] FUTURE FEATURES, SUBJECT TO ADDITIONS, CHANGES AND REMOVALS
+
+- World Spawn: Genetic Laberatories
+	- Fairly Rare (< 1 in 100 chunks)
+	- < 1 in 50 spawned labs will be functional
+	- Functional labs have all the necessary equipment to grow animals
+	- Derelict labs have 'Some' equipment but are abandoned and have many cobwebs
+
+- Gene Table
+	- Gene Table will recieve an update 
+	- Will allow samples of < 100% completeness to be broken down
+	- Will give a subset of samples depending on which DNA sections are present
+	- Will be configurable, default will allow ALL test tubes to be processed regardless of completeness
