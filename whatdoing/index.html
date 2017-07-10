@@ -9,22 +9,31 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet" >
     <link rel="shortcut icon" type="image/x-icon" href="http://queekus.com/favicon.ico">
+    <style type="text/css">
+      .track{
+        display: block;
+        margin: auto;
+      }
+    </style>
   </head>
   <body>
     <div class="container" id="soundboard">
       <audio id="player">
-          <source id="wav_src"type="audio/wav" />
-          Your browser does not support the audio element.
-    </audio>
-      <div class="row" style="margin-top:10px">
-        <div class="col-xs-4"> <a href="#" class="track btn btn-primary btn-sm" data-location="whatdoing.wav">What Doing?</a> </div>
-        <div class="col-xs-4"> <a href="#" class="track btn btn-primary btn-sm" data-location="whatdoing.wav">What Doing?</a> </div>
-        <div class="col-xs-4"> <a href="#" class="track btn btn-primary btn-sm" data-location="whatdoing.wav">What Doing?</a> </div>
+        <source id="wav_src"type="audio/wav" />
+        Your browser does not support the audio element.
+      </audio>
+      <div class="jumbotron" style="text-align: center;">
+        <h1>What Dooing?</h1>
+        <h3>Soundboard</h3>
+        <img class="img-responsive" src="dooingdog.jpg"/>
       </div>
       <div class="row" style="margin-top:10px">
-        <div class="col-xs-4"> <a href="#" class="track btn btn-primary btn-sm" data-location="whatdoing.wav">What Doing?</a> </div>
-        <div class="col-xs-4"> <a href="#" class="track btn btn-primary btn-sm" data-location="whatdoing.wav">What Doing?</a> </div>
-        <div class="col-xs-4"> <a href="#" class="track btn btn-primary btn-sm" data-location="whatdoing.wav">What Doing?</a> </div>
+        <div class="col-xs-6"> <a href="#" class="track btn btn-primary btn-sm" data-location="whatdoing.wav">What Doing?</a> </div>
+        <div class="col-xs-6"> <a href="#" class="track btn btn-primary btn-sm" data-location="endofworld.wav">Oh No, End Of World!</a> </div>
+      </div>
+      <div class="row" style="margin-top:10px">
+        <div class="col-xs-6"> <a href="#" class="track btn btn-primary btn-sm" data-location="throwsqueaky.wav">Throw Squeaky!</a> </div>
+        <div class="col-xs-6"> <a href="#" class="track btn btn-primary btn-sm" data-location="notakeonlythrow.wav">No Take, Only Throw!</a> </div>
       </div>
 
     <script src="../js/jquery-2.2.3.min.js"></script>
@@ -33,13 +42,9 @@
       $('.track').click(function(){
         var audio = $("#player");      
         $("#wav_src").attr("src", $(this).attr('data-location'));
-        /****************/
         audio[0].pause();
-        audio[0].load();//suspends and restores all audio element
-
-        //audio[0].play(); changed based on Sprachprofi's comment below
+        audio[0].load();
         audio[0].oncanplaythrough = audio[0].play();
-        /****************/
 
       });
 
