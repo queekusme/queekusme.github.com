@@ -10,9 +10,10 @@
         <link rel="shortcut icon" type="image/x-icon" href="http://queekus.com/favicon.ico">
         <style type="text/css">
             .giveMargin{ margin: 20px 20px 20px 20px; }
-            .fa-check{ color: #00FF00; }
-            .fa-times{ color: #FF0000; }
-            .fa-refresh{ color: #FFA500; }
+            .fa-check{ color: #00DD00; } .fa-check::after{ content: " Complete"; font-weight: bold;}
+            .fa-times{ color: #FF0000; } .fa-times::after{ content: " Not Started"; font-weight: bold;}
+            .fa-refresh{ color: #FFA500; } .fa-refresh::after{ content: " In Progress"; font-weight: bold;}
+            body{ background-color: #DDDDDD; }
         </style>
     </head>
     <body class="giveMargin">
@@ -21,29 +22,8 @@
             <table class="table table-condensed table-bordered">
                 <thead>
                     <tr>
-                        <th>0.0.2-Alpha</th>
-                        <th>Complete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Update to 1.12</td>
-                        <td><span class="fa fa-check"></span></td>
-                    </tr>
-                    <tr>
-                        <td>Honeycombs and Egg combs are combined, using NBT rather than a numerical metadata</td>
-                        <td><span class="fa fa-check"></span></td>
-                    </tr>
-                    <tr>
-                        <td>Queens will stop generating embryos when maximum bee count (per Apiary) has been reached - Includes unhatched bee embryos</td>
-                        <td><span class="fa fa-check"></span></td>
-                    </tr>
-                    <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-                </tbody>
-                <thead>
-                    <tr>
                         <th>0.0.3-Alpha</th>
-                        <th>Complete</th>
+                        <th>Progress</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -68,12 +48,24 @@
                 <thead>
                     <tr>
                         <th>0.1.0-Beta</th>
-                        <th>Complete</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <td>Uses for honey: Bottled Honey Consumable</td>
+                        <td><span class="fa fa-times"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Uses for honeycomb wax: Re-Craft Honeycombs for reuse in Apiary</td>
+                        <td><span class="fa fa-times"></span></td>
+                    </tr>
+                    <tr>
                         <td>Power implementation for Honey Extractor</td>
+                        <td><span class="fa fa-times"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Different flowers have different amounts of nectar</td>
                         <td><span class="fa fa-times"></span></td>
                     </tr>
                     <tr>
@@ -85,33 +77,24 @@
                 <thead>
                     <tr>
                         <th>Future</th>
-                        <th>Complete</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td> Uses for honey: Integrations with food mods (OreDictionary)</td>
-                        <td><span class="fa fa-times"></span></td>
-                    </tr>
-                    <tr>
-                        <td>Uses for honey: Integrations with food mods (Non OreDictionary)</td>
-                        <td><span class="fa fa-times"></span></td>
-                    </tr>
-                    <tr>
-                        <td>Uses for honey: Bottled Honey Consumable</td>
+                        <td>Modular Apiary (multiple hives per block) - Researching</td>
                         <td><span class="fa fa-times"></span></td>
                     </tr>
                     <tr>
                         <td>Uses for honey: Honey for 'sticky-traps'</td>
                         <td><span class="fa fa-times"></span></td>
                     </tr>
-                    <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
                     <tr>
-                        <td>Uses for honeycomb wax: Crayons</td>
+                        <td>Uses for honey: Integrations with food mods (OreDictionary)</td>
                         <td><span class="fa fa-times"></span></td>
                     </tr>
                     <tr>
-                        <td>Uses for honeycomb wax: Re-Craft Honeycombs for reuse in Apiary</td>
+                        <td>Uses for honey: Integrations with food mods (Non OreDictionary)</td>
                         <td><span class="fa fa-times"></span></td>
                     </tr>
                     <tr>
@@ -120,6 +103,10 @@
                     </tr>
                     <tr>
                         <td>Uses for honeycomb wax: Integrations with other mods (NonOreDictionary)</td>
+                        <td><span class="fa fa-times"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Uses for honeycomb wax: Crayons</td>
                         <td><span class="fa fa-times"></span></td>
                     </tr>
                     <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
