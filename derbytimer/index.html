@@ -55,7 +55,6 @@
 
        <p>&nbsp;</p>
 
-
    </div>
 
     <!-- Settings Modal -->
@@ -188,6 +187,8 @@
 
         function StartPeriod(){
             period++;
+            $("#endGameBtn").hide();
+            $("#endPeriodBtn").hide();
             if(period == maxPeriod){
                 $("#endGameBtn").show();
             }else{
@@ -270,7 +271,11 @@
         function EndLineup(){
             $("#endLineupBtn").hide();
             clearInterval(jamTimer);
-            StartJam();
+            if(periodTime <= 0){
+                StartPeriod();
+            }else{
+                StartJam();
+            }
         }
 
         function TimeOut(){
@@ -348,6 +353,11 @@
             $("#endGameBtn").hide();
             $("#endPeriodBtn").hide();
             $("#endJamBtn").hide();
+            $("#endLineupBtn").hide();
+            $("#officialReviewBtn").hide();
+            $("#endOfficialReviewBtn").hide();
+            $("#timeoutBtn").hide();
+            $("#endTimeoutBtn").hide();
         }
         
         function Start(){
