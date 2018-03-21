@@ -43,6 +43,7 @@
         <Button type="button" id="endGameBtn" onclick="Reset()" class="btn btn-danger btn-block" style="display: none;">End Game</Button>
         <Button type="button" id="endPeriodBtn" onclick="EndPeriod()" class="btn btn-danger btn-block" style="display: none;">End Period</Button>
         <Button type="button" id="endLineupBtn" onclick="EndLineup()" class="btn btn-danger btn-block" style="display: none;">End Lineup</Button>
+        <Button type="button" id="endIntermissionBtn" onclick="EndIntermission()" class="btn btn-danger btn-block" style="display: none;">End Intermission</Button>
 
         <Button type="button" id="endJamBtn" onclick="EndJam()" class="btn btn-danger btn-block" style="display: none;">End Jam</Button>
         
@@ -147,12 +148,16 @@
 
             jamTimer = setInterval(function(){
                 jamTime -= 1000;
-                $("#jamTimer").html(MillisecondsToTime(jamTime));
 
                 if(jamTime <= 0){
-                    clearInterval(jamTimer);
-                    EndJam();
+                    if(periodTime <= 0){
+                        EndPeriod();
+                    }else{
+                        clearInterval(jamTimer);
+                        EndJam();
+                    }
                 }
+                $("#jamTimer").html(MillisecondsToTime(jamTime));
 
             }, 1000);
         }
@@ -171,12 +176,12 @@
 
             jamTimer = setInterval(function(){
                 jamTime -= 1000;
-                $("#jamTimer").html(MillisecondsToTime(jamTime));
 
                 if(jamTime <= 0){
                     clearInterval(jamTimer);
                     StartJam();
                 }
+                $("#jamTimer").html(MillisecondsToTime(jamTime));
 
             }, 1000);
         }
@@ -195,12 +200,11 @@
 
             periodTimer = setInterval(function(){
                 if(!$("#periodTimer").hasClass("paused")){ periodTime -= 1000; }
-                $("#periodTimer").html(MillisecondsToTime(periodTime));
 
                 if(periodTime <= 0){
-                    clearInterval(periodTimer);
-                    EndPeriod();
+                    periodTime = 0;   
                 }
+                $("#periodTimer").html(MillisecondsToTime(periodTime));
 
             }, 1000);
         }
@@ -214,6 +218,7 @@
             $("#endLineupBtn").hide();
             $("#officialReviewBtn").hide();
             $("#timeoutBtn").hide();
+            $('#endIntermissionBtn').show();
 
             $("#periodNumber").html("Intermission");
             $("#jamNumber").html("&nbsp;");
@@ -225,7 +230,6 @@
 
             periodTimer = setInterval(function(){
                 periodTime -= 1000; 
-                $("#periodTimer").html(MillisecondsToTime(periodTime));
 
                 if(periodTime <= 0){
                     clearInterval(periodTimer);
@@ -238,6 +242,7 @@
 
                             $("#officialReviewBtn").show();
                             $("#timeoutBtn").show();
+                            $('#endIntermissionBtn').hide();
 
                             jamTime -= 1000; 
                             $("#jamTimer").html(MillisecondsToTime(jamTime));
@@ -252,8 +257,13 @@
                         Reset();
                     }
                 }
+                $("#periodTimer").html(MillisecondsToTime(periodTime));
 
             }, 1000);
+        }
+
+        function EndIntermission(){
+            periodTime = 1000;
         }
 
         function EndLineup(){
