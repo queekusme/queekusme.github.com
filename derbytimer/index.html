@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" href="apple-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="css/bootstrap-slider.css" rel="stylesheet">
+
+    <style>
+        .slider-selection{
+            background: green;
+        }
+        .slider-track-high {
+            background: #BABABA;
+        }
+    </style>
+
+    <title>Derby Timer</title>
+  </head>
+  <body onload="LoadSettings()">
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+        <span class="navbar-brand" href="#">Derby Timer</span>
+        <a class="btn btn-light" data-toggle="modal" data-target="#settingsModal"> <i class="fas fa-bars"></i> </a>
+    </nav>
+
+   <div class="container">
+        <p>&nbsp;</p>
+        <h2 class="text-center" id="periodNumber">Pre Game</h2>
+        <h2 class="text-center" id="periodTimer">00:00</h2>
+       
+        <p>&nbsp;</p>
+
+        <h2 class="text-center" id="jamNumber">Pre Jam</h2>
+        <h2 class="text-center" id="jamTimer">00:00</h2>
+
+        <Button type="button" id="startGameBtn" onclick="Start()" class="btn btn-success btn-block">Start</Button>
+
+        <Button type="button" id="endGameBtn" onclick="Reset()" class="btn btn-danger btn-block" style="display: none;">End Game</Button>
+        <Button type="button" id="endPeriodBtn" onclick="EndPeriod()" class="btn btn-danger btn-block" style="display: none;">End Period</Button>
+        <Button type="button" id="endLineupBtn" onclick="EndLineup()" class="btn btn-danger btn-block" style="display: none;">End Lineup</Button>
+
+        <Button type="button" id="endJamBtn" onclick="EndJam()" class="btn btn-danger btn-block" style="display: none;">End Jam</Button>
+        
+        <button type="button" id="officialReviewBtn" onclick="OfficialReview()" class="btn btn-success btn-block" type="button" style="display: none;">Official Review</button>
+        <button type="button" id="timeoutBtn" onclick="TimeOut()" class="btn btn-success btn-block" type="button" style="display: none;">Time Out</button>
+        
+        <Button type="button" id="endOfficialReviewBtn" onclick="EndOfficialReview()" class="btn btn-danger btn-block" style="display: none;">End Official Review</Button>
+        <Button type="button" id="endTimeoutBtn" onclick="EndTimeOut()" class="btn btn-danger btn-block" style="display: none;">End Time Out</Button>
+
+       <p>&nbsp;</p>
+
+
+   </div>
+
+    <!-- Settings Modal -->
+    <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="settingsModalLabel">Settings</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                    <p class="mb-0" id="periodMinsValLabel">Period Minutes: <span id="periodMinsSliderVal">30</span></p>
+                    <input id="periodMins" data-slider-id='periodMinsSlider' type="text"data-slider-step="1"/>
+                </div>
+                <div class="text-center">
+                    <p class="mb-0" id="periodNumValLabel">Period Count: <span id="periodNumSliderVal">2</span></p>
+                    <input id="periodNum" data-slider-id='periodNumSlider' type="text" data-slider-step="1"/>
+                </div>
+                <div class="text-center">
+                    <p class="mb-0" id="jamMinsValLabel">Jam Minutes: <span id="jamMinsSliderVal">2</span></p>
+                    <input id="jamMins" data-slider-id='jamMinsSlider' type="text" data-slider-step="1"/>
+                </div>
+                <div class="text-center">
+                    <p class="mb-0" id="lineupSecsValLabel">Lineup Seconds: <span id="lineupSecsSliderVal">30</span></p>
+                    <input id="lineupSecs" data-slider-id='lineupSecsSlider' type="text" data-slider-step="1"/>
+                </div>
+                <div class="text-center">
+                    <p class="mb-0" id="timeoutSecsValLabel">Timeout Seconds: <span id="timeoutSecsSliderVal">60</span></p>
+                    <input id="timeoutSecs" data-slider-id='timeoutSecsSlider' type="text" data-slider-step="1"/>
+                </div>
+                <div class="text-center">
+                    <p class="mb-0" id="intermissionMinsValLabel">Intermission Minutes: <span id="intermissionMinsSliderVal">30</span></p>
+                    <input id="intermissionMins" data-slider-id='intermissionMinsSlider' type="text" data-slider-step="1"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" onclick="SaveSettings()" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script type='text/javascript' src="js/bootstrap-slider.js"></script>
+    <script type='text/javascript' src="js/jquery.cookie-1.4.1.min.js"></script>
+
+    <script>
+        var periodMinutes;  // Cookie Loaded
+        var maxPeriod; // Cookie Loaded
+        var jamMinutes;  // Cookie Loaded
+        var lineupSeconds;  // Cookie Loaded
+        var timeoutSeconds;  // Cookie Loaded
+        var intermissionMinutes;  // Cookie Loaded
+
+        var period = 0;
+        var jam = 0;
+
+        var periodTime;
+        var periodTimer;
+
+        var jamTime;
+        var jamTimer;
+
+        var timeoutTime;
+        var timeoutTimer;
+
+        function MillisecondsToTime(millis){
+            var minutes = Math.floor((millis / 1000) / 60);
+            var seconds = ((millis / 1000) % 60);
+            return (minutes < 10 ? '0' : '') + minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+        }
+
+        function StartJam(){
+            $("#endJamBtn").show();
+
+            $("#officialReviewBtn").hide();
+            $("#timeoutBtn").hide();
+
+            jamTime = 60 /* seconds */ * jamMinutes /* minutes */ * 1000 /* milliseconds */;
+            jam++;
+
+            $("#jamNumber").html("Jam: " + jam);
+
+            jamTimer = setInterval(function(){
+                jamTime -= 1000;
+                $("#jamTimer").html(MillisecondsToTime(jamTime));
+
+                if(jamTime <= 0){
+                    clearInterval(jamTimer);
+                    EndJam();
+                }
+
+            }, 1000);
+        }
+
+        function EndJam(){
+            clearInterval(jamTimer);
+            $("#endJamBtn").hide();
+
+            $("#officialReviewBtn").show();
+            $("#timeoutBtn").show();
+            $("#endLineupBtn").show();
+
+            $("#jamNumber").html("Line Up");
+
+            jamTime = lineupSeconds /* seconds */ * 1000 /* milliseconds */;
+
+            jamTimer = setInterval(function(){
+                jamTime -= 1000;
+                $("#jamTimer").html(MillisecondsToTime(jamTime));
+
+                if(jamTime <= 0){
+                    clearInterval(jamTimer);
+                    StartJam();
+                }
+
+            }, 1000);
+        }
+
+        function StartPeriod(){
+            period++;
+            if(period == maxPeriod){
+                $("#endGameBtn").show();
+            }else{
+                $("#endPeriodBtn").show();
+            }
+            periodTime = 60 /* seconds */ * periodMinutes /* minutes */ * 1000 /* milliseconds */;
+
+            StartJam();
+            $("#periodNumber").html("Period: " + period + " of " + maxPeriod);
+
+            periodTimer = setInterval(function(){
+                if(!$("#periodTimer").hasClass("paused")){ periodTime -= 1000; }
+                $("#periodTimer").html(MillisecondsToTime(periodTime));
+
+                if(periodTime <= 0){
+                    clearInterval(periodTimer);
+                    EndPeriod();
+                }
+
+            }, 1000);
+        }
+
+        function EndPeriod(){
+            clearInterval(periodTimer);
+            clearInterval(jamTimer);
+
+            $("#endJamBtn").hide();
+            $("#endPeriodBtn").hide();
+            $("#endLineupBtn").hide();
+            $("#officialReviewBtn").hide();
+            $("#timeoutBtn").hide();
+
+            $("#periodNumber").html("Intermission");
+            $("#jamNumber").html("&nbsp;");
+            $("#jamTimer").html("&nbsp;");
+
+            jam = 0;
+
+            periodTime = 60 /* seconds */ * intermissionMinutes /* minutes */ * 1000 /* milliseconds */;
+
+            periodTimer = setInterval(function(){
+                periodTime -= 1000; 
+                $("#periodTimer").html(MillisecondsToTime(periodTime));
+
+                if(periodTime <= 0){
+                    clearInterval(periodTimer);
+                    if(period < maxPeriod){
+                        jamTime = lineupSeconds /* seconds */ * 1000 /* milliseconds */;
+                        jamTimer = setInterval(function(){
+                            $("#periodNumber").html("Period: " + (period+1) + " of " + maxPeriod);
+                            $("#periodTimer").html("&nbsp;");
+                            $("#jamNumber").html("Line Up");
+
+                            $("#officialReviewBtn").show();
+                            $("#timeoutBtn").show();
+
+                            jamTime -= 1000; 
+                            $("#jamTimer").html(MillisecondsToTime(jamTime));
+
+                            if(jamTime <= 0){
+                                clearInterval(jamTimer);
+                                StartPeriod();
+                            }
+
+                        }, 1000);
+                    }else{
+                        Reset();
+                    }
+                }
+
+            }, 1000);
+        }
+
+        function EndLineup(){
+            $("#endLineupBtn").hide();
+            clearInterval(jamTimer);
+            StartJam();
+        }
+
+        function TimeOut(){
+            $("#officialReviewBtn").hide();
+            $("#timeoutBtn").hide();
+            $("#endTimeoutBtn").show();
+
+            $("#periodTimer").addClass("paused");
+            clearInterval(jamTimer);
+
+            timeoutTime = timeoutSeconds /* seconds */ * 1000 /* milliseconds */;
+
+            timeoutTimer = setInterval(function(){
+                timeoutTime -= 1000;
+
+                $("#jamNumber").html("Time Out");
+                $("#jamTimer").html(MillisecondsToTime(timeoutTime));
+
+                if(timeoutTime <= 0){
+                    clearInterval(timeoutTimer);
+                    EndTimeOut();
+                }
+
+            }, 1000);
+        }
+        
+        function EndTimeOut(){
+            $("#officialReviewBtn").show();
+            $("#timeoutBtn").show();
+            $("#endTimeoutBtn").hide();
+            $("#officialReviewBtn").hide();
+            $("#timeoutBtn").hide();
+
+            clearInterval(timeoutTimer);
+            $("#periodTimer").removeClass("paused");
+            EndJam();
+        }
+        
+        function OfficialReview(){
+            $("#officialReviewBtn").hide();
+            $("#timeoutBtn").hide();
+            $("#endOfficialReviewBtn").show();
+
+            $("#periodTimer").addClass("paused");
+            clearInterval(jamTimer);
+
+            $("#jamNumber").html("Official Review");
+            $("#jamTimer").html("&nbsp;");
+        }
+
+        function EndOfficialReview(){
+            $("#officialReviewBtn").show();
+            $("#timeoutBtn").show();
+            $("#endOfficialReviewBtn").hide();
+
+            $("#periodTimer").removeClass("paused");
+
+            EndJam();
+        }
+
+        function Reset(){
+            clearInterval(periodTimer);
+            clearInterval(jamTimer);
+            clearInterval(timeoutTimer);
+            
+            jam = 0;
+            period = 0;
+            
+            $("#periodNumber").html("Pre Game");
+            $("#periodTimer").html("00:00");
+            $("#jamNumber").html("Pre Jam");
+            $("#jamTimer").html("00:00");
+            
+            $("#startGameBtn").show();
+            $("#endGameBtn").hide();
+            $("#endPeriodBtn").hide();
+            $("#endJamBtn").hide();
+        }
+        
+        function Start(){
+            $("#startGameBtn").hide();
+    
+            StartPeriod();
+        }
+        
+        function SaveSettings(){
+            $.removeCookie('periodMins');
+            $.removeCookie('periodNum');
+            $.removeCookie('jamMins');
+            $.removeCookie('lineupSecs');
+            $.removeCookie('timeoutSecs');
+            $.removeCookie('intermissionMins');
+
+            $.cookie('periodMins', $("#periodMins").data("value"), { expires: 365 });
+            $.cookie('periodNum', $("#periodNum").data("value"), { expires: 365 });
+            $.cookie('jamMins', $("#jamMins").data("value"), { expires: 365 });
+            $.cookie('lineupSecs', $("#lineupSecs").data("value"), { expires: 365 });
+            $.cookie('timeoutSecs', $("#timeoutSecs").data("value"), { expires: 365 });
+            $.cookie('intermissionMins', $("#intermissionMins").data("value"), { expires: 365 });
+
+            LoadSettings();
+        }
+
+        function LoadSettings(){
+            if($.cookie('periodMins') == undefined){ periodMinutes = 30; }
+            else{ periodMinutes = parseInt($.cookie('periodMins')); }
+            if($.cookie('periodNum') == undefined){ maxPeriod = 2;  }
+            else{ maxPeriod = parseInt($.cookie('periodNum')); }
+            if($.cookie('jamMins') == undefined){ jamMinutes = 2; }
+            else{ jamMinutes = parseInt($.cookie('jamMins')); }
+            if($.cookie('lineupSecs') == undefined){ lineupSeconds = 30; }
+            else{ lineupSeconds = parseInt($.cookie('lineupSecs')); }
+            if($.cookie('timeoutSecs') == undefined){ timeoutSeconds = 60; }
+            else{ timeoutSeconds = parseInt($.cookie('timeoutSecs')); }
+            if($.cookie('intermissionMins') == undefined){ intermissionMinutes = 30; }
+            else{ intermissionMinutes = parseInt($.cookie('intermissionMins')); }
+
+            // alert(periodMinutes);
+            // alert(maxPeriod);
+            // alert(jamMinutes);
+            // alert(lineupSeconds);
+            // alert(timeoutSeconds);
+            // alert(intermissionMinutes);
+
+            $("#periodMins").slider({
+                min: 2,
+                max: 60,
+                value: periodMinutes
+            });
+            $("#periodMins").on("slide", function(slideEvt) {
+                $("#periodMinsSliderVal").text(slideEvt.value);
+            });
+            $("#periodMinsSliderVal").text(periodMinutes);
+            $("#periodNum").slider({
+                min: 1,
+                max: 5,
+                value: maxPeriod
+            });
+            $("#periodNum").on("slide", function(slideEvt) {
+                $("#periodNumSliderVal").text(slideEvt.value);
+            });
+            $("#periodNumSliderVal").text(maxPeriod);
+            $("#jamMins").slider({
+                min: 1,
+                max: 5,
+                value: jamMinutes
+            });
+            $("#jamMins").on("slide", function(slideEvt) {
+                $("#jamMinsSliderVal").text(slideEvt.value);
+            });
+            $("#jamMinsSliderVal").text(jamMinutes);
+            $("#lineupSecs").slider({
+                min: 5,
+                max: 60,
+                value: lineupSeconds
+            });
+            $("#lineupSecs").on("slide", function(slideEvt) {
+                $("#lineupSecsSliderVal").text(slideEvt.value);
+            });
+            $("#lineupSecsSliderVal").text(lineupSeconds);
+            $("#timeoutSecs").slider({
+                min: 10,
+                max: 120,
+                value: timeoutSeconds
+            });
+            $("#timeoutSecs").on("slide", function(slideEvt) {
+                $("#timeoutSecsSliderVal").text(slideEvt.value);
+            });
+            $("#timeoutSecsSliderVal").text(timeoutSeconds);
+            $("#intermissionMins").slider({
+                min: 5,
+                max: 60,
+                value: intermissionMinutes
+            });
+            $("#intermissionMins").on("slide", function(slideEvt) {
+                $("#intermissionMinsSliderVal").text(slideEvt.value);
+            });
+            $("#intermissionMinsSliderVal").text(intermissionMinutes);
+            
+        }
+    </script>
+  </body>
+</html>
