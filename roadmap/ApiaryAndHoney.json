@@ -20,12 +20,17 @@
             ]
         },
         {
-            "VersionNumber":"Future",
+            "VersionNumber":"1.4.0 ",
             "Content":[
                 { "FeatureName":"Uses for honey: Integrations with food mods (OreDictionary)",                          "FeatureState":"Note" },
                 { "FeatureName":"Uses for honey: Integrations with food mods (Non OreDictionary)",                      "FeatureState":"Note" },
                 { "FeatureName":"Uses for honeycomb wax: Integrations with other mods (OreDictionary)",                 "FeatureState":"Note" },
-                { "FeatureName":"Uses for honeycomb wax: Integrations with other mods (Non OreDictionary)",             "FeatureState":"Note" },
+                { "FeatureName":"Uses for honeycomb wax: Integrations with other mods (Non OreDictionary)",             "FeatureState":"Note" }
+            ]
+        },
+        {
+            "VersionNumber":"Future",
+            "Content":[
                 { "FeatureName":"Revisit and fix Bee AI",                                                               "FeatureState":"Note" }
             ]
         }
