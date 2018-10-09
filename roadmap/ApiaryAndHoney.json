@@ -14,7 +14,9 @@
         {
             "VersionNumber":"1.3.0 ",
             "Content":[
-                { "FeatureName":"TBD...",                                                                               "FeatureState":"Note" }
+                { "FeatureName":"Bees can now find a player and sting them when swarming from an Apiary",               "FeatureState":"On_Track" },
+                { "FeatureName":"Uses for honey: Honey for 'sticky-traps'",                                             "FeatureState":"Note" },
+                { "FeatureName":"Uses for honeycomb wax: Crayons",                                                      "FeatureState":"Note" }
             ]
         },
         {
@@ -24,8 +26,6 @@
                 { "FeatureName":"Uses for honey: Integrations with food mods (Non OreDictionary)",                      "FeatureState":"Note" },
                 { "FeatureName":"Uses for honeycomb wax: Integrations with other mods (OreDictionary)",                 "FeatureState":"Note" },
                 { "FeatureName":"Uses for honeycomb wax: Integrations with other mods (Non OreDictionary)",             "FeatureState":"Note" },
-                { "FeatureName":"Uses for honey: Honey for 'sticky-traps'",                                             "FeatureState":"Note" },
-                { "FeatureName":"Uses for honeycomb wax: Crayons",                                                      "FeatureState":"Note" },
                 { "FeatureName":"Revisit and fix Bee AI",                                                               "FeatureState":"Note" }
             ]
         }
