@@ -1,0 +1,50 @@
+{
+    "ProjectName":"Apiary and Honey",
+    "ProjectDesc":"Apiary and Honey is a mod that adds bees and beekeeping to Minecraft. Unlike other mods which add bees, Apiary and Honey aims to have a more realistic representation of beekeeping than other mods may provide.",
+    "Versions":[
+        {
+            "VersionNumber":"1.0.0 (Current)",
+            "Content":[
+                { "FeatureName":"Honey Extractor Crafting Recipe",                                                      "FeatureState":"On_Track" },
+                { "FeatureName":"Convert Royal Comb to a comb entity",                                                  "FeatureState":"On_Track" },
+                { "FeatureName":"Convert enum CombEntity to class CombEntity",                                          "FeatureState":"On_Track" },
+                { "FeatureName":"Uses for honey: Bottled Honey Consumable",                                             "FeatureState":"On_Track" },
+                { "FeatureName":"Uses for honeycomb wax: Re-Craft Honeycombs for reuse in Apiary",                      "FeatureState":"On_Track" },
+                { "FeatureName":"Power implementation for Honey Extractor",                                             "FeatureState":"On_Track" },
+                { "FeatureName":"Uses for honeycomb wax: Candles (Temporary Light Source)",                             "FeatureState":"On_Track" }
+            ]
+        },
+        {
+            "VersionNumber":"1.1.0",
+            "Content":[
+                { "FeatureName":"IBeeHolder Capability: Items/Blocks can hold a number of bees and a single Queen",     "FeatureState":"On_Track" },
+                { "FeatureName":"Bee-Crate: Pick up bees and return them to the Apiary",                                "FeatureState":"On_Track" },
+                { "FeatureName":"Migrate BlockBeehive to IBeeHolder Capability",                                        "FeatureState":"Delayed" },
+                { "FeatureName":"Migrate Apiary to IBeeHolder Capability",                                              "FeatureState":"On_Track" },
+                { "FeatureName":"Modular Apiary (bees can move between adjacent apiaries) using IBeeHolder Capability", "FeatureState":"Delayed" },
+                { "FeatureName":"Exclusion Plates (Queen cannot move between adjacent apiaries)",                       "FeatureState":"Delayed" }
+            ]
+        },
+        {
+            "VersionNumber":"1.2.0",
+            "Content":[
+                { "FeatureName":"Uses for honey: Integrations with food mods (OreDictionary)",                          "FeatureState":"Delayed" },
+                { "FeatureName":"Uses for honeycomb wax: Integrations with other mods (OreDictionary)",                 "FeatureState":"Delayed" },
+                { "FeatureName":"Different flowers have different amounts of nectar",                                   "FeatureState":"Delayed" },
+                { "FeatureName":"Secondary method for nectar generation",                                               "FeatureState":"Delayed" }
+            ]
+        },
+        {
+            "VersionNumber":"Future",
+            "Content":[
+                { "FeatureName":"Uses for honey: Integrations with food mods (Non OreDictionary)",                      "FeatureState":"Delayed" },
+                { "FeatureName":"Uses for honeycomb wax: Integrations with other mods (NonOreDictionary)",              "FeatureState":"Delayed" },
+                { "FeatureName":"Uses for honey: Honey for 'sticky-traps'",                                             "FeatureState":"Delayed" },
+                { "FeatureName":"Uses for honeycomb wax: Crayons",                                                      "FeatureState":"Delayed" },
+                { "FeatureName":"Revisit and fix Bee AI",                                                               "FeatureState":"Delayed" }
+            ]
+        }
+    ]
+    
+    
+}
