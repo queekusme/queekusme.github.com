@@ -6,29 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./css/bootstrap.min.css" />
+        <link href="./css/app.css" rel="stylesheet" />
         <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
         <link rel="shortcut icon" type="image/x-icon" href="http://queekus.com/favicon.ico" />
 
         <title>Queekus.com</title>
-
-        <style>
-            a.no-ul{
-                text-decoration: none;
-            }
-            body {
-            /* Margin bottom by footer height */
-            margin-bottom: 60px;
-            }
-            .footer {
-                position: absolute;
-                bottom: 0;
-                width: 100%;
-                /* Set the fixed height of the footer here */
-                height: 60px;
-                line-height: 60px; /* Vertically center the text there */
-            }
-        </style>
 
     </head>
     <body>
@@ -62,7 +45,7 @@
                             </p>
                             
                         </div>
-                        <div class="col-sm-3"><img class="d-none d-lg-block" src="img/Annabelle.jpg" alt="Annabelle Kennedy"></div>
+                        <div class="col-sm-3"><img class="d-none d-lg-block" src="./img/Annabelle.jpg" alt="Annabelle Kennedy"></div>
                     </div>
                     <h4>Contact:</h4>
                     <div class="row">
@@ -78,6 +61,20 @@
                     </div>
                 </div>
             </div>
+            <p/>
+            <div class="card text-white bg-secondary">
+                <div class="card-header">Featured Project</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h5 id="featured_name" class="card-title">Hoof</h5>
+                            <p id="featured_desc" class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a id="featured_url" href="#" class="btn btn-primary">Check out project!</a>
+                        </div>
+                        <div class="col-sm-3"><img id="featured_image" class="d-none d-lg-block" src="" alt="Featured Project"></div>
+                    </div>
+                </div>
+            </div>
         </div>
         <footer class="footer text-center d-none d-lg-block">
                 <span class="text-muted">Site designed by Annabelle Kennedy using <a href="https://getbootstrap.com">Bootstrap 4</a>. &copy; Annabelle Kennedy (2018)</span>
@@ -88,5 +85,21 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+
+        <script>
+            var featured = {
+                name: "Hoof",
+                desc: "<p>Hoof is a singleplayer game designed for Rainbow Jam 2018, a Gamejam promoting LGBT+ positiivity.</p> \
+                        <p>In hoof, you play a young horse who has been kicked out of their herd in Africa for 'non-conformity', \
+                        which is left vauge to allow the player to play the game with whatever LGBT+ identity they wish.</p>",
+                url: "./portfolio/hoof/index.htm",
+                image: "./portfolio/hoof/hoof.png"
+            };
+            
+            $("#featured_name").html(featured.name);
+            $("#featured_desc").html(featured.desc);
+            $("#featured_url").attr("href", featured.url);
+            $("#featured_image").attr("src", featured.image);
+        </script>
     </body>
 </html>
