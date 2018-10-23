@@ -18,7 +18,7 @@
                 { "FeatureName":"Uses for honey: Honey for 'sticky-traps'",                                             "FeatureState":"Note" },
                 { "FeatureName":"Uses for honeycomb wax: Crayons",                                                      "FeatureState":"Note" },
                 { "FeatureName":"Bees consume honey over time (Configurable)",                                          "FeatureState":"Note" },
-                { "FeatureName":"Bees pop. die if cannot eat (honey) for extended period (Configurable)",               "FeatureState":"Note" }
+                { "FeatureName":"Bee population can die if cannot eat (honey) for extended period (Configurable)",               "FeatureState":"Note" }
             ]
         },
         {
