@@ -18,7 +18,7 @@
                 { "FeatureName":"Uses for honey: Honey for 'sticky-traps'",                                             "FeatureState":"Note" },
                 { "FeatureName":"Uses for honeycomb wax: Crayons",                                                      "FeatureState":"Note" },
                 { "FeatureName":"Bees consume honey over time (Configurable)",                                          "FeatureState":"Note" },
-                { "FeatureName":"Bee population can die if cannot eat (honey) for extended period (Configurable)",               "FeatureState":"Note" }
+                { "FeatureName":"Bee population can die if cannot eat (honey) for extended period (Configurable)",      "FeatureState":"Note" }
             ]
         },
         {
@@ -27,7 +27,8 @@
                 { "FeatureName":"Uses for honey: Integrations with food mods (OreDictionary)",                          "FeatureState":"Note" },
                 { "FeatureName":"Uses for honey: Integrations with food mods (Non OreDictionary)",                      "FeatureState":"Note" },
                 { "FeatureName":"Uses for honeycomb wax: Integrations with other mods (OreDictionary)",                 "FeatureState":"Note" },
-                { "FeatureName":"Uses for honeycomb wax: Integrations with other mods (Non OreDictionary)",             "FeatureState":"Note" }
+                { "FeatureName":"Uses for honeycomb wax: Integrations with other mods (Non OreDictionary)",             "FeatureState":"Note" },
+                { "FeatureName":"Migrate from using RF for energy to using Forge Energy for energy",                    "FeatureState":"Note" }
             ]
         },
         {
