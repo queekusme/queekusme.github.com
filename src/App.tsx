@@ -16,7 +16,7 @@ export default function App() {
                     <h1 className="display-3">Hello, world!</h1>
                     <p className="lead">My website is going through a small re-design...</p>
                     <hr className="my-2" />
-                    <p>If you wish to have a look at my current projects, my Github and roller Derby Officials CV links can be found in the navbar above</p>
+                    <p>If you wish to have a look at my current projects, my Github and Roller Derby Officials CV links can be found in the navbar above</p>
                 </Jumbotron>
             </Container>
         </div>
