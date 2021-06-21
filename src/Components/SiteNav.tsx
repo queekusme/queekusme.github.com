@@ -8,7 +8,7 @@ import {
     NavItem,
     NavLink,
     Container
-  } from 'reactstrap';
+} from 'reactstrap';
 
 export default function SiteNav()
 {
@@ -28,6 +28,9 @@ export default function SiteNav()
                         </NavItem>
                         <NavItem>
                             <NavLink href="https://github.com/queekusme">GitHub</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="https://anniekennedy.itch.io/">itch.io Profile</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>

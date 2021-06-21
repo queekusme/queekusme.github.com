@@ -1,24 +1,28 @@
 import React from 'react';
-import { Container, Jumbotron } from 'reactstrap';
+import {
+    Container, Jumbotron
+} from 'reactstrap';
 import './App.css';
+
 import SiteNav from './Components/SiteNav';
+import FeaturedProjects from './Sections/FeaturedProjects';
+import Footer from './Sections/Footer';
 
 export default function App() {
     return (
         <div>
             <SiteNav />
-            <p>&nbsp;</p>
-            <p>&nbsp;</p>
-            <p>&nbsp;</p>
-            <p>&nbsp;</p>
             <Container>
                 <Jumbotron>
                     <h1 className="display-3">Hello, world!</h1>
                     <p className="lead">My website is going through a small re-design...</p>
-                    <hr className="my-2" />
-                    <p>If you wish to have a look at my current projects, my Github and Roller Derby Officials CV links can be found in the navbar above</p>
+                    <p>Most of my projects can either be found on my Itch Profile or on my Github Profile, Links for both can be found in the navbar above.</p>
+                    <p>Featured Projects are displayed below. These are usually my latest projects.</p>
                 </Jumbotron>
+                <hr />
+                <FeaturedProjects />
             </Container>
+            <Footer />
         </div>
     );
 }
