@@ -64,13 +64,17 @@ export default function FeaturedProjects()
                     )}
                 />
             </CardGroup>
-            {/* <CardGroup>
+            <CardGroup>
                 <Project
-                    uid="coming_soon_1"
-                    title="Coming soon..."
-                    imageSrc="/assets/318x180.svg"
-                    slugline="The details for this project will be coming soon..."
-                    descriptionShort={(<p>Coming Soon...</p>)}
+                    uid="deno_secret_santa"
+                    title="Secret Santa Algorithm"
+                    imageSrc="https://deno.land/logo.svg"
+                    slugline="The secret Santa algorithm is a Deno module which allows the user to generate Secret Santa style pairings"
+                    descriptionShort={(
+                        <div>
+                            The module can be viewed at <a href="https://deno.land/x/secret_santa">https://deno.land/x/secret_santa</a>
+                        </div>
+                    )}
                     // descriptionExpanded={()}
                 />
                 <Project
@@ -81,7 +85,7 @@ export default function FeaturedProjects()
                     descriptionShort={(<p>Coming Soon...</p>)}
                     // descriptionExpanded={()}
                 />
-            </CardGroup> */}
+            </CardGroup>
         </div>
     );
 }

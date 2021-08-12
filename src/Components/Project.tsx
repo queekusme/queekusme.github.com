@@ -19,7 +19,7 @@ export default function Project({ uid, title, slugline, descriptionShort, descri
 {
     return (
         <Card>
-            <CardImg top width="100%" src={imageSrc} alt="Card image cap" />
+            <CardImg top style={{ margin: "0 auto", width: "15vw" }} src={imageSrc} alt="Card image cap" />
             <CardBody>
                 <CardTitle tag="h5">{ title }</CardTitle>
                 <CardSubtitle tag="h6" className="mb-2 text-muted">{ slugline }</CardSubtitle>
