@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="./css/bootstrap.min.css" />
+        <link href="./css/app.css" rel="stylesheet" />
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
+        <link rel="shortcut icon" type="image/x-icon" href="http://queekus.com/favicon.ico" />
+
+        <title>Queekus.com</title>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <div class="container">
+                <a class="navbar-brand" href="http://queekus.com">Queekus.com</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"> <a class="nav-link" href="#">Home</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="portfolio.htm">Portfolio</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="https://docs.google.com/spreadsheets/d/1j_j66dSuO2WUfHwfGYWleSU1uLlmhVzJEHJTVEzrvWo/edit">Roller Derby Officials CV</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        &nbsp;
+        <div class="container">
+            <div class="card text-white bg-secondary">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <h2 class="card-title">Annabelle Kennedy</h2>
+                            <p class="card-text">
+                                <p>Hi, My name's Annabelle. I graduated from Abertay University in the summer of 2018 with an Upper Second Class Degree (2.1 BSc).</p>
+                                <p>In the links above you can find my current portfolio and my Roller Derby Officiating CV.</p>
+                                <p>If there is anything you would like to contact me about regarding my portfolio/qualifications, please follow one fo these links:</p>
+                            </p>
+                            
+                        </div>
+                        <div class="col-sm-3"><img class="d-none d-lg-block" src="./img/Annabelle.jpg" alt="Annabelle Kennedy"></div>
+                    </div>
+                    <h4>Contact:</h4>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <a href="https://www.linkedin.com/in/annabelle-kennedy-559431a1/" class="text-white no-ul"><i class="fab fa-linkedin" aria-hidden="true"></i> Linkedin (Annabelle Kennedy)</a>
+                        </div>
+                        <div class="col-sm-12">
+                            <a href="http://twitter.com/queekusme" class="text-white no-ul"><i class="fab fa-twitter" aria-hidden="true"></i> Twitter (@Queekusme)</a>
+                        </div>
+                        <div class="col-sm-12">                                
+                            <a href="mailto:annabellekdy@gmail.com?Subject=Portfolio" class="text-white no-ul"><i class="fas fa-envelope" aria-hidden="true"></i> Email (Annabelle Kennedy)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p/>
+            <div class="card text-white bg-secondary">
+                <div class="card-header"><h4>Featured Project:</h4></div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h5 id="featured_name" class="card-title">Hoof</h5>
+                            <p id="featured_desc" class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a id="featured_url" href="#" class="btn btn-primary">Check out project!</a>
+                        </div>
+                        <div class="col-sm-3"><img id="featured_image" class="d-none d-lg-block" src="" alt="Featured Project"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer text-center d-none d-lg-block">
+                <span class="text-muted">Site designed by Annabelle Kennedy using <a href="https://getbootstrap.com">Bootstrap 4</a>. &copy; Annabelle Kennedy (2018)</span>
+        </footer>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        <script>
+            var featured = {
+                name: "Hoof",
+                desc: "<p>Hoof is a singleplayer game designed for Rainbow Jam 2018, a Gamejam promoting LGBT+ positiivity.</p> \
+                        <p>In hoof, you play a young horse who has been kicked out of their herd in Africa for 'non-conformity', \
+                        which is left vauge to allow the player to play the game with whatever LGBT+ identity they wish.</p>",
+                url: "./portfolio/hoof/index.htm",
+                image: "./portfolio/hoof/hoof.png"
+            };
+            
+            $("#featured_name").html(featured.name);
+            $("#featured_desc").html(featured.desc);
+            $("#featured_url").attr("href", featured.url);
+            $("#featured_image").attr("src", featured.image);
+        </script>
+    </body>
+</html>
