@@ -91,7 +91,7 @@
         <script>
             const month = new Date(Date.now()).getMonth();
             console.log(month)
-            if([10, 11, 0].includes(month)) // November, december and January
+            if(![10, 11, 0].includes(month)) // November, december and January
             {
                 for(const snowflake of document.getElementsByClassName("snowflakes"))
                 {
