@@ -93,10 +93,11 @@
             console.log(month)
             if(![10, 11, 0].includes(month)) // November, december and January
             {
-                for(const snowflake of document.getElementsByClassName("snowflakes"))
-                {
-                    snowflake.remove();
-                }
+                document.querySelectorAll('.snowflakes').forEach(e => e.remove());
+                // for(const snowflake of document.getElementsByClassName("snowflakes"))
+                // {
+                //     snowflake.remove();
+                // }
             }
         </script>
     </body>
