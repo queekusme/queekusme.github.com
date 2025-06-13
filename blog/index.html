@@ -33,7 +33,9 @@
             window.addEventListener('load', async () =>
             {
                 const page = urlParam().page ?? "404";
-                const content = await fetch(`/${page}.txt`);
+                const pathName = location.pathname.split("/");
+                pathName.pop();
+                const content = await fetch(`${pathName.join("/")}/${page}.txt`);
 
                 const title = document.getElementById("blog_title");
                 const text = document.getElementById("blog_text");
