@@ -36,7 +36,7 @@
 
                 processed = processed.replaceAll("\n", "<br/>");
 
-                processed = processed.replaceAll(/\>image\:([^\<]+)\</gi, "<img src=\"$1\" />")
+                processed = processed.replaceAll(/\>image\:([^\<]+)\</gi, "<img class=\"img-fluid\" src=\"$1\" />")
 
                 return processed;
             }
