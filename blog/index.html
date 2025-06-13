@@ -43,8 +43,7 @@
 
                 for(let i = 0; i < (groups ?? 1); i++) accGroups += group;
 
-                const reg = `\>${tag}${accGroups}\<${incNewline ? "\\n" : ""}`;
-                return RegExp(reg, "gi")
+                return RegExp(`\>${tag}${accGroups}\<${incNewline ? "\\n" : ""}`, "gi")
             }
 
             function handleReplace(content)
@@ -53,7 +52,7 @@
 
                 processed = processed.replaceAll(generateTagRegex("image"), "<img class=\"img-fluid\" src=\"$1\" />");
                 processed = processed.replaceAll(generateTagRegex("meta", 1, true), "");
-                processed = processed.replaceAll(generateTagRegex("href", 2), "<a href=\"$2\">$1</a>");
+                processed = processed.replaceAll(generateTagRegex("href", 2), "<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"$2\">$1</a>");
                 processed = processed.replaceAll("\n", "<br/>");
 
                 return processed;
