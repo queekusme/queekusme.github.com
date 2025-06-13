@@ -30,19 +30,24 @@
         <script>
             function urlParam(){ var kv = []; location.search.replace("?", "").split("&").forEach((pair) => { var kvPair = pair.split("="); kv[kvPair[0]] = kvPair[1]; } ); return kv; }
 
-            window.addEventListener('load', async () =>
+            const display = async (page) =>
             {
-                const page = urlParam().page ?? "404";
+                const page = urlParam().page ?? page ?? "404";
                 const pathName = location.pathname.split("/");
                 pathName.pop();
                 const content = await fetch(`${pathName.join("/")}/${page}.txt`);
+
+                if(content.status === 200)
+                    return display("404");
 
                 const title = document.getElementById("blog_title");
                 const text = document.getElementById("blog_text");
 
                 title.innerHTML = page;
-                text.innerHTML = (await content.text()).replace("\n", "<br/>");
-            });
+                text.innerHTML = (await content.text()).replaceAll("\n", "<br/>");
+            }
+
+            window.addEventListener('load', display);
 
         </script>
     </body>
