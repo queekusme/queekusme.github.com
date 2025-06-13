@@ -34,9 +34,9 @@
             {
                 let processed = content;
 
-                processed.replaceAll("\n", "<br/>");
+                processed = processed.replaceAll("\n", "<br/>");
 
-                processed.replaceAll(/\>image\:([^\<]+)\</, "<img src=\"$1\" />")
+                processed = processed.replaceAll(/\>image\:([^\<]+)\</gi, "<img src=\"$1\" />")
 
                 return processed;
             }
