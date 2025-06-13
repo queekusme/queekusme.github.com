@@ -41,7 +41,7 @@
                 const text = document.getElementById("blog_text");
 
                 title.innerHTML = page;
-                text.innerHTML = content.replace("\n", "<br/>");
+                text.innerHTML = (await content.text()).replace("\n", "<br/>");
             });
 
         </script>
