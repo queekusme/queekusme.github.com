@@ -30,6 +30,17 @@
         <script>
             function urlParam(){ var kv = []; location.search.replace("?", "").split("&").forEach((pair) => { var kvPair = pair.split("="); kv[kvPair[0]] = kvPair[1]; } ); return kv; }
 
+            function handleReplace(content)
+            {
+                let processed = content;
+
+                processed.replaceAll("\n", "<br/>");
+
+                processed.replaceAll(/\>image\:([^\<]+)\</, "<img src=\"$1\" />")
+
+                return processed;
+            }
+
             const display = async (forcedPage) =>
             {
                 const page = forcedPage ?? urlParam().page ?? "404";
@@ -44,7 +55,7 @@
                 const text = document.getElementById("blog_text");
 
                 title.innerHTML = page;
-                text.innerHTML = (await content.text()).replaceAll("\n", "<br/>");
+                text.innerHTML = handleReplace(await content.text());
             }
 
             window.addEventListener('load', () => display());
