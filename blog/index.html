@@ -37,7 +37,7 @@
                 pathName.pop();
                 const content = await fetch(`${pathName.join("/")}/${page}.txt`);
 
-                if(content.status === 200)
+                if(content.status !== 200)
                     return display("404");
 
                 const title = document.getElementById("blog_title");
