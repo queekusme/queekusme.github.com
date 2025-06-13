@@ -1,4 +1,4 @@
->meta~{"published": "2025-06-14T00:31:355.63927", "author":"Queekusme"}<
+>meta~{"published": "2025-06-14T00:31:35.63927", "author":"Queekusme"}<
 Well, hello there... So I got bored and decided to add a blog to my website and thought I'd do a quick run down of how it works and why I designed it the way I did.
 
 The first thing to take into consideration is that I host on Github Pages. This means that I can only host a static site, so no server-funsies... This however wasnt an issue as I know Javascript fairly well meaning that with a few good applications of document.getElementById(...) I was in business.
