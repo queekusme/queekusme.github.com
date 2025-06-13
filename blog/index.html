@@ -47,7 +47,7 @@
                 text.innerHTML = (await content.text()).replaceAll("\n", "<br/>");
             }
 
-            window.addEventListener('load', display);
+            window.addEventListener('load', () => display());
 
         </script>
     </body>
