@@ -25,6 +25,6 @@ I'm not expecting to post much here, however considering I'm trying to distance 
 
 If anything new appears then check out for a new post detailing the changes. I'll be tweaking the code as I go so new features will pop up from time to time.
 
-I'm not looking to release the code for this publically as it's not something I'd like to maintain as a public project but if you like the idea feel free to spin your own blog up. The minimum you will need is the 'index.html' and 404.txt files. These can be in the root of your site however I find it cleaner to put them in a subfolder. The code should be intelliugent enough to pull the correcy subfolder out to find the files corectly.
+I'm not looking to release the code for this publically as it's not something I'd like to maintain as a public project but if you like the idea feel free to spin your own blog up. The minimum you will need is the 'index.html' and 404.txt files. These can be in the root of your site however I find it cleaner to put them in a subfolder. The code should be intelligent enough to pull the correct subfolder out to find the files corectly.
 
 To see another example of a blog post with everything mentioned here included see the >href~Lorem Ipsum~https://queekus.com/blog/index.html?post=lorem-ipsum< post and >href~Lorem Ipsum.txt~https://queekus.com/blog/lorem-ipsum.txt< source file
