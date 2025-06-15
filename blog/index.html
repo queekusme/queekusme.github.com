@@ -174,9 +174,6 @@
                             const [status, checkContent] = await checkLink(`${item}.txt`);
                             const checkMeta = getMetadataFromContent(await checkContent.text());
 
-
-                            console.log(item, checkMeta, (new Date(checkMeta?.published ?? 0)).getTime(), Date.now())
-
                             if((new Date(checkMeta?.published ?? 0)).getTime() > Date.now())
                                 continue; // hide from chain
 
