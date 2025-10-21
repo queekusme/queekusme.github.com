@@ -1,0 +1,4 @@
+{
+    "issuer": "https://queekus.com/",
+    "jwks_uri": "https://queekus.com/.well-known/jwks.json"
+}
