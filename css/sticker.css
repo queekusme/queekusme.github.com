@@ -1,0 +1,34 @@
+:root
+{
+    --sticker-bgcolor: #97C02F;
+    --sticker-text-color: black;
+    --sticker-color-fold-l: 10;
+    --sticker-color-fold-bg: white;
+}
+
+.sticker:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 16px 16px 0;
+    border-radius: 0px 0px 0px 5px;
+    border-style: solid;
+    border-color: hsl(from var(--sticker-bgcolor) h s calc(l - var(--sticker-color-fold-l))) var(--sticker-color-fold-bg);
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.sticker
+{
+    background: var(--sticker-bgcolor);
+    color: var(--sticker-text-color);
+    position: relative;
+    padding: 0.5rem 1.25rem;
+    overflow: hidden;
+    border-radius: 5px 0px 5px 5px;
+    -webkit-box-shadow: -2px 3px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow: -2px 3px 1px rgba(0,0,0,0.2);
+    box-shadow: -2px 3px 1px rgba(0,0,0,0.2);
+}
