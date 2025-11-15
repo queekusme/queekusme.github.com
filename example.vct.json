@@ -1,0 +1,31 @@
+{
+    "vct": "https://queekusme.com/example.vct.json",
+    "name": "Example Credential",
+    "display": [
+        {
+            "locale": "en_gb",
+            "name": "Example Credential",
+            "rendering": {
+                "simple": { "background_color": "#ff00ff" }
+            }
+        }
+    ],
+    "claims": [
+        {
+            "path": ["name"],
+            "mandatory": true,
+            "sd": "always",
+            "display": [
+                { "locale": "en_gb", "label": "Name", "description": " The name of the holder" }
+            ]
+        },
+        {
+            "path": ["dob"],
+            "mandatory": true,
+            "sd": "always",
+            "display": [
+                { "locale": "en_gb", "label": "Date of Birth", "description": " The birth date of the holder" }
+            ]
+        }
+    ]
+}
