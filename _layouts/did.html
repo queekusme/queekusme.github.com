@@ -1,21 +1,17 @@
-{% assign didwebidentifier = site.baseurl %}
-
 {
   "@context": [
     "https://www.w3.org/ns/did/v1",
     "https://w3id.org/security/suites/jws-2020/v1"
   ],
-  "id": "did:web:{{didwebidentifier}}",
+  "id": "did:web:{{ page.did_web_identifier }}",
   "verificationMethod": [
+{% for jwk in page.jwks %}
     {
-      "id": "did:web:{{didwebidentifier}}#key-0",
+      "id": "did:web:{{ page.did_web_identifier }}#key-{{ forloop.index }}",
       "type": "JsonWebKey2020",
-      "controller": "did:web:{{didwebidentifier}}",
-      "publicKeyJwk": {
-        "kty": "OKP",
-        "crv": "Ed25519",
-        "x": "0-e2i2_Ua1S5HbTYnVB0lj2Z2ytXu2-tYmDFf8f5NjU"
-      }
+      "controller": "did:web:{{ page.did_web_identifier }}",
+      "publicKeyJwk": {{ jwk }}
     }
+{% endfor %}
   ]
 }
