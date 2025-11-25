@@ -5,13 +5,13 @@
   ],
   "id": "did:web:{{ page.did_web_identifier }}",
   "verificationMethod": [
-{% for jwk in page.jwks %}
+{%- for jwk in page.jwks -%}
     {
-      "id": "did:web:{{ page.did_web_identifier }}#key-{{ forloop.index }}",
+      "id": "did:web:{{ page.did_web_identifier }}#key-{{ forloop.index0 }}",
       "type": "JsonWebKey2020",
       "controller": "did:web:{{ page.did_web_identifier }}",
-      "publicKeyJwk": {{ jwk }}
+      "publicKeyJwk": {{ jwk | jsonify }}
     }
-{% endfor %}
+{%- endfor -%}
   ]
 }
