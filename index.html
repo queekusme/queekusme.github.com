@@ -1,3 +1,7 @@
+---
+layout: null
+---
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -23,27 +27,15 @@
         </nav>
         <div class="container">
             <div class="row">
-                <a href="https://mastodon.scot/@queekusme" target="_blank" class="card">
-                    <img src="https://joinmastodon.org/logos/logo-purple.svg" class="card-img-top queekus-card-image" alt="Mastodon Logo">
+                {% for card in site.data.cards %}
+                <a href="{{ card.href }}" target="_blank" class="card">
+                    <img src="{{ card.img }}" class="card-img-top queekus-card-image" alt="{{ card.img-alt }}">
                     <div class="card-body">
-                        <h5 class="card-title">@queekusme@mastodon.scot</h5>
-                        <p class="card-text">Follow me on Mastodon...</p>
+                        <h5 class="card-title">{{ card.title }}</h5>
+                        <p class="card-text">{{ card.text }}</p>
                     </div>
                 </a>
-                <a href="https://github.com/queekusme/" target="_blank" class="card">
-                    <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" class="card-img-top queekus-card-image" alt="Github Logo">
-                    <div class="card-body">
-                        <h5 class="card-title">@queekusme on Github</h5>
-                        <p class="card-text">Check out my projects</p>
-                    </div>
-                </a>
-                <a href="derby_game_history.html" target="_blank" class="card">
-                    <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Google_Sheets.png" class="card-img-top queekus-card-image" alt="Google Sheets Logo">
-                    <div class="card-body">
-                        <h5 class="card-title">Roller Derby Game History CV</h5>
-                        <p class="card-text">Check out my officiating history for Flat Track Roller Derby</p>
-                    </div>
-                </a>
+                {% endfor %}
             </div>
             &nbsp;
             <div>
