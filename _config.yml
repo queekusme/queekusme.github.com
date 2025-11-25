@@ -1,2 +1,2 @@
 include: [".well-known"]
-exclude: [".well-known/issuer-attestation/example.vct.json.raw"]
+exclude: []
