@@ -1,0 +1,17 @@
+- title: "@queekusme@mastodon.scot"
+  text: Follow me on Mastodon...
+  href: https://mastodon.scot/@queekusme
+  img: https://joinmastodon.org/logos/logo-purple.svg
+  img-alt: Mastodon Logo
+
+- title: "@queekusme on Github"
+  text: Check out my projects
+  href: https://github.com/queekusme/
+  img: https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png
+  img-alt: Github Logo
+
+- title: Roller Derby Game History CV
+  text: Check out my officiating history for Flat Track Roller Derby
+  href: derby_game_history.html
+  img: https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Google_Sheets.png
+  img-alt: Google Sheets Logo
