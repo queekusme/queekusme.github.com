@@ -4,7 +4,7 @@
     "https://w3id.org/security/suites/jws-2020/v1"
   ],
   "id": "did:web:{{ page.did_web_identifier }}",
-{%- if page.verificationMethod.length != 0 -%}
+{% if page.verificationMethod.length != 0 %}
   "verificationMethod": [
   {% for jwk_id in page.verificationMethod %}
     {
@@ -12,8 +12,6 @@
       "type": "JsonWebKey2020",
       "controller": "did:web:{{ page.did_web_identifier }}",
       "publicKeyJwk": {{ page.jwks[jwk_id] | jsonify }}
-    }{% if forloop.last != true %},{% endif %}
-  {% endfor %}
-  ]
-{% endif %}
+    }{%- if forloop.last != true -%},{%- endif -%}{% endfor %}
+  ]{% endif %}
 }
