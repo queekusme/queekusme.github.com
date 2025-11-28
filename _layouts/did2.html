@@ -4,19 +4,21 @@
     "https://w3id.org/security/suites/jws-2020/v1"
   ],
   "id": "did:web:{{ page.did_web_identifier }}",
+{%- if page.verificationMethod.length != 0 -%}
   "verificationMethod": [
-{%- for jwk in page.jwks -%}
+{%- for jwk in page.verificationMethod -%}
     {%- if jwk.kid != nil -%}
       {% assign key_id = jwk.kid %}
     {%- else -%}
       {% assign key_id = "key-{{ forloop.index0 }}" %}
     {%- endif -%}
     {
-      "id": "did:web:{{ page.did_web_identifier }}#-{{ key_id }}",
+      "id": "did:web:{{ page.did_web_identifier }}#{{ key_id }}",
       "type": "JsonWebKey2020",
       "controller": "did:web:{{ page.did_web_identifier }}",
-      "publicKeyJwk": {{ jwk | jsonify }}
+      "publicKeyJwk": {{ page.jwks[jwk.kid] | jsonify }}
     }{%- if forloop.last != true -%},{%- endif -%}
 {%- endfor -%}
   ]
+{%- endif -%}
 }
