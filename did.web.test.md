@@ -1,5 +1,5 @@
 ---
-layout: did2
+layout: did_test
 permalink: /test/did.json
 did_web_identifier: queekus.com:test
 methods:
