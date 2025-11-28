@@ -8,7 +8,7 @@
 {%- for jwk in page.jwks -%}
     {%- if jwk.kid != nil -%}
       {% assign key_id = jwk.kid %}
-    {%- elsif -%}
+    {%- else -%}
       {% assign key_id = "key-{{ forloop.index0 }}" %}
     {%- endif -%}
     {
