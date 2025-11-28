@@ -6,7 +6,7 @@
   "id": "did:web:{{ page.did_web_identifier }}",
 {%- if page.verificationMethod.length != 0 -%}
   "verificationMethod": [
-{%- for jwk in page.verificationMethod -%}
+  {% for jwk in page.verificationMethod %}
     {%- if jwk.kid != nil -%}
       {% assign key_id = jwk.kid %}
     {%- else -%}
@@ -17,8 +17,8 @@
       "type": "JsonWebKey2020",
       "controller": "did:web:{{ page.did_web_identifier }}",
       "publicKeyJwk": {{ page.jwks[jwk.kid] | jsonify }}
-    }{%- if forloop.last != true -%},{%- endif -%}
-{%- endfor -%}
+    }{%- if forloop.last != true -%},{% endif %}
+  {%- endfor -%}
   ]
-{%- endif -%}
+{% endif %}
 }
