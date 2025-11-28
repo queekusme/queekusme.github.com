@@ -13,7 +13,8 @@
       "id": "did:web:{{ page.did_web_identifier }}#{{ jwk_id }}",
       "type": "JsonWebKey2020",
       "controller": "did:web:{{ page.did_web_identifier }}",
-      "publicKeyJwk": {{ page.jwks[jwk_id] | jsonify }}
+      "publicKeyJwk": {{ page.jwks[jwk_id] | jsonify }},
+      "kid": "jwk_id"
     }{% else %}
     "did:web:{{ page.did_web_identifier }}{{ jwk_id }}"
     {%- endif -%}{%- if forloop.last != true -%},{%- endif -%}{% endfor %}
