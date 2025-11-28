@@ -1,0 +1,6 @@
+{
+    "keys": [{% for jwk in page.jwks %}
+        {{ jwk | jsonify }}{%- if forloop.last != true -%},{%- endif -%}
+    {% endfor %}
+    ]
+}
