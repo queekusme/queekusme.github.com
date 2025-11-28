@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/suites/jws-2020/v1"
+  ],
+  "id": "did:web:{{ page.did_web_identifier }}",
+  "verificationMethod": [
+{%- for jwk in page.jwks -%}
+    {%- id jwk.kid != nil -%}
+      {% assign key_id = jwk.kid %}
+    {%- elsif -%}
+      {% assign key_id = "key-{{ forloop.index0 }}" %}
+    {%- endif -%}
+    {
+      "id": "did:web:{{ page.did_web_identifier }}#-{{ key_id }}",
+      "type": "JsonWebKey2020",
+      "controller": "did:web:{{ page.did_web_identifier }}",
+      "publicKeyJwk": {{ jwk | jsonify }}
+    }{%- if forloop.last !== true -%},{%- endif -%}
+{%- endfor -%}
+  ]
+}
