@@ -2,9 +2,11 @@
 layout: did2
 permalink: /.well-known/did-test.json
 did_web_identifier: queekus.com
-verificationMethod:
-  - PQtUiJmmly_EWnwQMfPyiCGZwH55Uut36C6mWvJwNkc
-  - PQtUiJmmly_EWnwQMfPyiCGZwH55Uut36C6mWvJwNkc2
+methods:
+  verificationMethod:
+    - PQtUiJmmly_EWnwQMfPyiCGZwH55Uut36C6mWvJwNkc
+  authentication:
+    - PQtUiJmmly_EWnwQMfPyiCGZwH55Uut36C6mWvJwNkc2
 jwks:
   PQtUiJmmly_EWnwQMfPyiCGZwH55Uut36C6mWvJwNkc:
     kty: RSA
