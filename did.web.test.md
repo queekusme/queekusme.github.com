@@ -1,6 +1,6 @@
 ---
 layout: did2
-permalink: /.well-known/did-test.json
+permalink: /test/did.json
 did_web_identifier: queekus.com
 methods:
   verificationMethod:
