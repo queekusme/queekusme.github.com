@@ -6,6 +6,7 @@ methods:
   verificationMethod:
     - PQtUiJmmly_EWnwQMfPyiCGZwH55Uut36C6mWvJwNkc
   authentication:
+    - did:web:queekus.com#PQtUiJmmly_EWnwQMfPyiCGZwH55Uut36C6mWvJwNkc
     - PQtUiJmmly_EWnwQMfPyiCGZwH55Uut36C6mWvJwNkc2
 jwks:
   PQtUiJmmly_EWnwQMfPyiCGZwH55Uut36C6mWvJwNkc:
