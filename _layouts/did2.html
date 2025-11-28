@@ -15,7 +15,7 @@
       "controller": "did:web:{{ page.did_web_identifier }}",
       "publicKeyJwk": {{ page.jwks[jwk_id] | jsonify }}
     }{% else %}
-    "{{ jwk_id }}"
+    "did:web:{{ page.did_web_identifier }}{{ jwk_id }}"
     {%- endif -%}{%- if forloop.last != true -%},{%- endif -%}{% endfor %}
   ]{%- if forloop.last != true -%},{%- endif -%}
 {%- endif -%}
