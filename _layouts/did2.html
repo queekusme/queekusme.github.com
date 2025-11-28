@@ -4,10 +4,10 @@
     "https://w3id.org/security/suites/jws-2020/v1"
   ],
   "id": "did:web:{{ page.did_web_identifier }}",
-{% for method_type in page.methods %}
-{% if page[method_type].length != 0 %}
-  "--{{ method_type }}--": [
-    {% for jwk_id in page.methods[method_type] %}
+{% for method_type_pair in page.methods %}
+{% if method_type_pair[1].length != 0 %}
+  "{{ method_type_pair[0] }}": [
+    {% for jwk_id in method_type_pair[1]] %}
     {
       "id": "did:web:{{ page.did_web_identifier }}#{{ jwk_id }}",
       "type": "JsonWebKey2020",
