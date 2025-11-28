@@ -6,7 +6,7 @@
   "id": "did:web:{{ page.did_web_identifier }}",
   "verificationMethod": [
 {%- for jwk in page.jwks -%}
-    {%- id jwk.kid != nil -%}
+    {%- if jwk.kid != nil -%}
       {% assign key_id = jwk.kid %}
     {%- elsif -%}
       {% assign key_id = "key-{{ forloop.index0 }}" %}
