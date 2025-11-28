@@ -16,7 +16,7 @@
       "type": "JsonWebKey2020",
       "controller": "did:web:{{ page.did_web_identifier }}",
       "publicKeyJwk": {{ jwk | jsonify }}
-    }{%- if forloop.last !== true -%},{%- endif -%}
+    }{%- if forloop.last != true -%},{%- endif -%}
 {%- endfor -%}
   ]
 }
