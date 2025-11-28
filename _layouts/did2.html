@@ -3,15 +3,19 @@
     "https://www.w3.org/ns/did/v1",
     "https://w3id.org/security/suites/jws-2020/v1"
   ],
-  "id": "did:web:{{ page.did_web_identifier }}",{% for method_type in page.methods %}
-  {%- if page[method_type].length != 0 -%}
+  "id": "did:web:{{ page.did_web_identifier }}",
+{% for method_type in page.methods %}
+{% if page[method_type].length != 0 %}
   "{{ method_type }}": [
-  {% for jwk_id in page[method_type] %}
+    {% for jwk_id in page[method_type] %}
     {
       "id": "did:web:{{ page.did_web_identifier }}#{{ jwk_id }}",
       "type": "JsonWebKey2020",
       "controller": "did:web:{{ page.did_web_identifier }}",
       "publicKeyJwk": {{ page.jwks[jwk_id] | jsonify }}
-    }{%- if forloop.last != true -%},{%- endif -%}{% endfor %}
-  ]{% endif %}{%- if forloop.last != true -%},{%- endif -%}{% endfor %}
+    }{%- if forloop.last != true -%},{%- endif -%}
+    {% endfor %}
+  ]{%- if forloop.last != true -%},{%- endif -%}
+{%- endif -%}
+{% endfor %}
 }
