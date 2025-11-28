@@ -6,7 +6,7 @@ methods:
   verificationMethod:
     - PQtUiJmmly_EWnwQMfPyiCGZwH55Uut36C6mWvJwNkc
   authentication:
-    - \#PQtUiJmmly_EWnwQMfPyiCGZwH55Uut36C6mWvJwNkc
+    - "#PQtUiJmmly_EWnwQMfPyiCGZwH55Uut36C6mWvJwNkc"
     - PQtUiJmmly_EWnwQMfPyiCGZwH55Uut36C6mWvJwNkc2
 jwks:
   PQtUiJmmly_EWnwQMfPyiCGZwH55Uut36C6mWvJwNkc:
