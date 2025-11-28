@@ -7,13 +7,8 @@
 {%- if page.verificationMethod.length != 0 -%}
   "verificationMethod": [
   {% for jwk in page.verificationMethod %}
-    {%- if jwk.kid != nil -%}
-      {% assign key_id = jwk.kid %}
-    {%- else -%}
-      {% assign key_id = "key-{{ forloop.index0 }}" %}
-    {%- endif -%}
     {
-      "id": "did:web:{{ page.did_web_identifier }}#{{ key_id }}",
+      "id": "did:web:{{ page.did_web_identifier }}#{{ jwk.kid }}",
       "type": "JsonWebKey2020",
       "controller": "did:web:{{ page.did_web_identifier }}",
       "publicKeyJwk": {{ page.jwks[jwk.kid] | jsonify }}
