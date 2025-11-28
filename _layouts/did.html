@@ -1,21 +1,27 @@
+{%- assign sub = page.permalink | split: "/" -%}
+{%- if sub[1] == ".well-known" -%}
+  {%- assign sub_parts = "" -%}
+{%- else -%}
+  {%- assign sub_parts = page.permalink | replace: "/", ":" | replace: ":did.json", "" -%}
+{%- endif -%}
 {
   "@context": [
     "https://www.w3.org/ns/did/v1",
     "https://w3id.org/security/suites/jws-2020/v1"
   ],
-  "id": "did:web:{{ page.did_web_identifier }}",
+  "id": "did:web:{% include CNAME %}{{ sub_parts }}",
 {%- for method_type_pair in page.methods -%}
 {% if method_type_pair[1].length != 0 %}
   "{{ method_type_pair[0] }}": [
     {%- for jwk_id in method_type_pair[1] -%}
     {% if page.jwks[jwk_id] != nil %}
     {
-      "id": "did:web:{{ page.did_web_identifier }}#{{ jwk_id }}",
+      "id": "did:web:{% include CNAME %}{{ sub_parts }}#{{ jwk_id }}",
       "type": "JsonWebKey2020",
-      "controller": "did:web:{{ page.did_web_identifier }}",
+      "controller": "did:web:{% include CNAME %}{{ sub_parts }}",
       "publicKeyJwk": {{ page.jwks[jwk_id] | jsonify }}
     }{% else %}
-    "did:web:{{ page.did_web_identifier }}{{ jwk_id }}"
+    "did:web:{% include CNAME %}{{ sub_parts }}{{ jwk_id }}"
     {%- endif -%}{%- if forloop.last != true -%},{%- endif -%}{% endfor %}
   ]{%- if forloop.last != true -%},{%- endif -%}
 {%- endif -%}

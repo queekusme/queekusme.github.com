@@ -1,7 +1,6 @@
 ---
-layout: did_test
+layout: did
 permalink: /test/did.json
-did_web_identifier: queekus.com:test
 methods:
   verificationMethod:
     - PQtUiJmmly_EWnwQMfPyiCGZwH55Uut36C6mWvJwNkc
