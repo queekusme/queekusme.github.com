@@ -17,9 +17,11 @@
     {% if site.data.jwks[jwk_id] != nil %}
     {
       "id": "did:web:{% include CNAME %}{{ sub_parts }}#{{ jwk_id }}",
-      "type": "JsonWebKey2020",
+      "type": "{{ site.data.jwks[jwk_id].type }}",
       "controller": "did:web:{% include CNAME %}{{ sub_parts }}",
-      "publicKeyJwk": {{ site.data.jwks[jwk_id] | jsonify }}
+      "publicKeyJwk": {{ site.data.jwks[jwk_id].publicKeyJwk | jsonify }}{% if site.data.jwks[jwk_id].expires != nil %},
+      "expires": "{{ site.data.jwks[jwk_id].expires }}"{% endif %}{% if site.data.jwks[jwk_id].revoked != nil %},
+      "revoked": "{{ site.data.jwks[jwk_id].revoked }}"{% endif %}
     }{% else %}
     "did:web:{% include CNAME %}{{ sub_parts }}{{ jwk_id }}"
     {%- endif -%}{%- unless forloop.last -%},{%- endunless -%}{% endfor %}

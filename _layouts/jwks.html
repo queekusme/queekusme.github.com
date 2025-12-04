@@ -1,6 +1,16 @@
 {
     "keys": [{% for jwk in page.keys %}
-        {{ site.data.jwks[jwk] | jsonify }}{%- unless forloop.last -%},{%- endunless -%}
+        {%- unless  site.data.jwks[jwk].revoked %}
+        {%- capture nowunix -%}{{'now' | date: '%s'}}{%- endcapture -%}
+        {% if site.data.jwks[jwk].expires %}
+        {% capture expires %}{{site.data.jwks[jwk].expires | date: '%s'}}{% endcapture %}
+        {% else %}
+        {% capture expires %}{{'now' | date: '%s'}}{% endcapture %}
+        {%- endif -%}
+        {% if expires >= nowunix %}
+        {{ site.data.jwks[jwk].publicKeyJwk | jsonify }}{%- unless forloop.last -%},{%- endunless -%}
+        {%- endif -%}
+        {%- endunless -%}
     {% endfor %}
     ]
 }
