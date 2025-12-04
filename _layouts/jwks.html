@@ -1,6 +1,6 @@
 {
-    "keys": [{% for jwk in page.jwks %}
-        {{ jwk | jsonify }}{%- if forloop.last != true -%},{%- endif -%}
+    "keys": [{% for jwk in page.keys %}
+        {{ site.data.jwks[jwk] | jsonify }}{%- unless forloop.last -%},{%- endunless -%}
     {% endfor %}
     ]
 }

@@ -1,9 +1,6 @@
 ---
 layout: jwks
 permalink: /.well-known/jwks.json
-jwks:
-  - kty: RSA
-    n: pbnAgv81IwRRV0dbTB_OqW6_Pd4UoGuFHifIiRfnOsXuVmhS47R-20uDNWNDtrrnheZ2zAe9GxPkcughM0upJgxsz_ItYzOgy5bz_e2Eb8s_860L9gtrYDDubTqQTBRh16Rswt_o_dh5KSPPsw7xAeEpVmp4Da_WQIOahePLDjiip7Ce1VyQS9S1DkcOeXe1XuzpuzeBjlE8Pnc1dpXzMER58dEmAAfm4JX4Pr5F3f261-QlaywoEHJdBqtwJCli4XIMLTpgoMUm6NYpDq7pK3v2t0RALx7OVXEEfA30OhJEWb_RbCh8LuYSBzHCPPXyBKoYcHo9XydF-Jb8se8fXQ
-    e: AQAB
-    kid: PQtUiJmmly_EWnwQMfPyiCGZwH55Uut36C6mWvJwNkc
+keys:
+  - PQtUiJmmly_EWnwQMfPyiCGZwH55Uut36C6mWvJwNkc
 ---
