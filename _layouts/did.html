@@ -10,6 +10,7 @@
     "https://w3id.org/security/suites/jws-2020/v1"
   ],
   "id": "did:web:{% include CNAME %}{{ sub_parts }}",
+  "updated": "{{'now' | date: '%s'}}",
 {%- for method_type_pair in page.methods -%}
 {% if method_type_pair[1].length != 0 %}
   "{{ method_type_pair[0] }}": [
