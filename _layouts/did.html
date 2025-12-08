@@ -24,8 +24,19 @@
       "revoked": "{{ site.data.jwks[jwk_id].revoked }}"{% endif %}
     }{% else %}
     "did:web:{% include CNAME %}{{ sub_parts }}{{ jwk_id }}"
-    {%- endif -%}{%- unless forloop.last -%},{%- endunless -%}{% endfor %}
-  ]{% unless forloop.last %},{% endunless %}
+    {%- endif -%}{%- unless forloop.last -%},{% endunless %}{% endfor %}
+  ]{% if forloop.last != true or page.services.size > 0 %},{% endif %}
 {%- endif -%}
+{%- endfor -%}
+{% if page.services.size > 0 %}
+  "service": [
+{%- for service in page.services %}
+    {
+      "id": "did:web:{% include CNAME %}{{ sub_parts }}{{ service.id }}",
+      "type": "{{ service.type }}",
+      "serviceEndpoint": {{ service.serviceEndpoint | jsonify }}
+    }{% unless forloop.last %},{% endunless -%}
 {% endfor %}
+  ]
+{%- endif %}
 }
