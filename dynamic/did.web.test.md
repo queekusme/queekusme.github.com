@@ -3,6 +3,6 @@ layout: did
 permalink: /test/did.json
 services:
   - id: "#exampleservice1"
-    type: "LinkedDomain"
+    type: "LinkedDomains"
     serviceEndpoint: "https://queekus.com/"
 ---
