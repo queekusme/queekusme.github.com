@@ -1,6 +1,6 @@
 {
     "keys": [{% for jwk in page.keys %}
-        {%- unless  site.data.jwks[jwk].revoked %}
+        {%- unless site.data.jwks[jwk].revoked %}
         {%- capture nowunix -%}{{'now' | date: '%s'}}{%- endcapture -%}
         {% if site.data.jwks[jwk].expires %}
         {% capture expires %}{{site.data.jwks[jwk].expires | date: '%s'}}{% endcapture %}
