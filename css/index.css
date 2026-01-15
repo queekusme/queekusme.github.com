@@ -8,7 +8,7 @@
 .card
 {
     margin: 10px auto;
-    padding: 5px;
+    padding: 20px;
     width: 20rem;
 
     text-decoration: none;
@@ -34,6 +34,6 @@
 {
     --sticker-bgcolor: var(--bs-dark-text-emphasis);
     --sticker-text-color: rgb(var(--bs-tertiary-bg-rgb));
-    --sticker-color-fold-bg: rgb(var(--bs-tertiary-bg-rgb));
+    --sticker-color-fold-bg: var(--bs-info-bg-subtle);
     text-decoration: none;
 }

@@ -9,7 +9,7 @@ layout: null
         <link rel="icon" href="favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
-        <title>queekus.com</title>
+        <title>queekus.com{% if page.title != nil %} - {{ page.title }}{% endif %}</title>
         <link rel="me" href="https://mastodon.scot/@queekusme"></link>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
@@ -17,24 +17,18 @@ layout: null
         <link href="css/index.css" rel="stylesheet">
     </head>
     <body id="root">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-info-subtle">
             <div class="container justify-content-md-between justify-content-center">
-                <span class="navbar-brand">queekus.com</span>
-                <a href="no-ai.txt" class="sticker d-flex align-items-center" role="alert">
+                <span class="navbar-brand">
+                    <a href="/" style="text-decoration: none; color: inherit">queekus.com</a>
+                </span>
+                <a href="no-ai.html" class="sticker d-flex align-items-center" role="alert">
                     Created by a human without AI&nbsp;&nbsp;<span class="fa fa-external-link"></span>
                 </a>
             </div>
         </nav>
         <div class="container">
-            <div class="row">{% for card in site.data.cards %}
-                <a href="{{ card.href }}" target="_blank" class="card">
-                    <img src="{{ card.img }}" class="card-img-top queekus-card-image" alt="{{ card.img-alt }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ card.title }}</h5>
-                        <p class="card-text">{{ card.text }}</p>
-                    </div>
-                </a>{% endfor %}
-            </div>
+            {{ content }}
             &nbsp;
             <div>
                 <p>&copy; Annabelle Kennedy</p>
@@ -58,13 +52,17 @@ layout: null
           </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script>
+            function urlParam(){ var kv = []; location.search.replace("?", "").split("&").forEach((pair) => { var kvPair = pair.split("="); kv[kvPair[0]] = kvPair[1] ? JSON.parse(kvPair[1]) : undefined; } ); return kv; }
+
             const month = new Date(Date.now()).getMonth();
             const day = new Date(Date.now()).getDate();
 
-            if(![10, 11, 0].includes(month)) // November, december and January
+            const noEffects = "no_effects" in urlParam();
+
+            if(noEffects || ![10, 11, 0].includes(month)) // November, december and January
                 document.querySelectorAll('.snowflakes').forEach(e => e.remove());
 
-            if(month === 3 && day === 1) // 1st April
+            if(!noEffects && month === 3 && day === 1) // 1st April
                 document.getElementById("root").className = "april_fools";
         </script>
     </body>

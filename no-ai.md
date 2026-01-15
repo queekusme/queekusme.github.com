@@ -1,4 +1,8 @@
-No AI
+---
+layout: default
+title: NO AI
+---
+# No AI
 
 In a world where we are constantly bombarded by content created by and promoting Artificial Intelligence and the tools therewithin.
 

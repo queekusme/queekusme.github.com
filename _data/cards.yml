@@ -1,8 +1,26 @@
 - title: "@queekusme@mastodon.scot"
-  text: Follow me on Mastodon...
+  text: Follow me on Mastodon
   href: https://mastodon.scot/@queekusme
   img: https://joinmastodon.org/logos/logo-purple.svg
   img-alt: Mastodon Logo
+
+- title: "@queekusme on Tiktok"
+  text: Follow me on Tiktok
+  href: https://www.tiktok.com/@queekusme
+  img: https://wiki.archiveteam.org/images/e/ef/TikTok_logo.png
+  img-alt: Tiktok Logo
+
+- title: "@queekusme on Loops"
+  text: Follow me on Loops
+  href: https://loops.video/@queekusme
+  img: https://loops.video/nav-logo.png
+  img-alt: Loops Logo
+
+- title: "@queekusme on Twitch"
+  text: Follow me on Twitch
+  href: https://www.twitch.tv/queekusme
+  img: https://static.vecteezy.com/system/resources/previews/018/910/819/large_2x/twitch-logo-twitch-icon-twitch-symbol-free-free-vector.jpg
+  img-alt: Twitch Logo
 
 - title: "@queekusme on Github"
   text: Check out my projects
