@@ -8,7 +8,7 @@ layout: null
         <link rel="icon" href="favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
-        <title>queekus.com{% if page.title != nil %} - {{ page.title }}{% endif %}</title>
+        <title>queekus.com{% if page.title %} - {{ page.title }}{% endif %}</title>
         <link rel="me" href="https://mastodon.scot/@queekusme"></link>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
@@ -27,6 +27,7 @@ layout: null
             </div>
         </nav>
         <div class="container">
+            &nbsp;
             {{ content }}
             &nbsp;
             <div>

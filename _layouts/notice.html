@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<div class="jumbotron">
+    <h1 class="display-4">Before Continuing to {{page.target}} </h1>
+    <p class="lead">{{ content }}</p>
+    <hr class="my-4">
+{% if page.last %}
+    <p>{{ page.last }}</p>
+{% endif %}
+    <a class="btn bg-info-subtle btn-lg" href="{{page.redirect}}" role="button">Continue to {{ page.target }}</a>
+</div>
