@@ -37,3 +37,55 @@
     --sticker-color-fold-bg: var(--bs-info-bg-subtle);
     text-decoration: none;
 }
+
+@media (min-width: 0px) {
+    .project_thumbnail
+    {
+        width: 73px;
+        height: 73px;
+    }
+
+    .project_thumbnail_icon
+    {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 600px) {
+    .project_thumbnail
+    {
+        width: 150px;
+        height: 150px;
+    }
+
+    .project_thumbnail_icon
+    {
+        font-size: 20px;
+    }
+}
+.project_thumbnail
+{
+    position:relative;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.project_image
+{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.project-link
+{
+    text-decoration: underline !important;
+}
+
+.project_thumbnail_icon
+{
+    position:absolute;
+    color: var(--bs-primary-bg-subtle);
+    bottom:3px;
+    right:3px;
+}

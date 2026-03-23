@@ -1,0 +1,14 @@
+{
+  "name": "queekusdotcom",
+  "scripts": {
+    "start": "jekyll serve",
+    "dev": "jekyll serve --unpublished"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/queekusme/queekusme.github.com.git"
+  },
+  "author": "queekusme",
+  "license": "All rights Reserved",
+  "homepage": "https://queekus.com"
+}
