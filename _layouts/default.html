@@ -17,13 +17,31 @@ layout: null
     </head>
     <body id="root">
         <nav class="navbar navbar-expand-lg bg-info-subtle">
-            <div class="container justify-content-md-between justify-content-center">
+            <div class="container">
                 <span class="navbar-brand">
                     <a href="/" style="text-decoration: none; color: inherit">queekus.com</a>
                 </span>
-                <a href="/no-ai.html" class="sticker d-flex align-items-center" role="alert">
-                    Created by a human without AI&nbsp;&nbsp;<span class="fa fa-external-link"></span>
-                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                    {% if site.projects.size > 0 %}
+                        <li class="nav-item px-5">
+                            <a class="nav-link" href="/projects/">Projects</a>
+                        </li>
+                    {% endif %}
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarText">
+                    <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a href="/no-ai.html" class="nav-item sticker d-flex align-items-center" role="alert">
+                                Created by a human without AI&nbsp;&nbsp;<span class="fa fa-external-link"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
         <div class="container">
