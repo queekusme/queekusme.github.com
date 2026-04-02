@@ -2,7 +2,7 @@
 published: false
 layout: project
 permalink: /projects/tilde-sat
-project_name: Tilde Sat
+title: Tilde Sat
 abstract: A Hexpansion project which makes the Tildagon EMFCamp Badge look like a cubesat.
 photos: # Examples for now...
     - https://tildagon.badge.emfcamp.org/images/badge-photos/badge-in-the-dark.jpg

@@ -10,7 +10,7 @@
     "https://www.w3.org/ns/did/v1",
     "https://w3id.org/security/suites/jws-2020/v1"
   ],
-  "id": "did:web:{% include CNAME %}{{ sub_parts }}",
+  "id": "did:web:{{ site.url }}{{ sub_parts }}",
 {%- for method_type_pair in page.methods -%}
 {% if method_type_pair[1].length != 0 %}
   "{{ method_type_pair[0] }}": [
@@ -23,16 +23,16 @@
     {%- endif -%}
     {% if site.data.jwks[jwk_id] != nil %}
     {
-      "id": "did:web:{% include CNAME %}{{ sub_parts }}#{{ jwk_id }}",
+      "id": "did:web:{{ site.url }}{{ sub_parts }}#{{ jwk_id }}",
       "type": "{{ site.data.jwks[jwk_id].type }}",
-      "controller": "did:web:{% include CNAME %}{{ sub_parts }}",
+      "controller": "did:web:{{ site.url }}{{ sub_parts }}",
       "publicKeyJwk": {{ site.data.jwks[jwk_id].publicKeyJwk | jsonify }}{% if site.data.jwks[jwk_id].expires != nil %},
       "expires": "{{ site.data.jwks[jwk_id].expires }}"{% endif %}{% if site.data.jwks[jwk_id].revoked != nil %},
       "revoked": "{{ site.data.jwks[jwk_id].revoked }}"{% endif %}
     }{%- unless forloop.last -%},{% endunless %}
     {%- else -%}
     {% if site.data.jwks[jwk_id_raw].revoked == nil and expires >= nowunix %}
-    "did:web:{% include CNAME %}{{ sub_parts }}{{ jwk_id }}"{%- unless forloop.last -%},{%- endunless -%}
+    "did:web:{{ site.url }}{{ sub_parts }}{{ jwk_id }}"{%- unless forloop.last -%},{%- endunless -%}
     {%- endif -%}
     {%- endif -%}{% endfor %}
   ]{% if forloop.last != true or page.services.size > 0 %},{% endif %}
@@ -42,7 +42,7 @@
   "service": [
 {%- for service in page.services %}
     {
-      "id": "did:web:{% include CNAME %}{{ sub_parts }}{{ service.id }}",
+      "id": "did:web:{{ site.url }}{{ sub_parts }}{{ service.id }}",
       "type": "{{ service.type }}",
       "serviceEndpoint": {{ service.serviceEndpoint | jsonify }}
     }{% unless forloop.last %},{% endunless -%}

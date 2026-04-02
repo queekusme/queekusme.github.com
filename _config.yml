@@ -1,6 +1,7 @@
 include: [".well-known"]
 exclude: []
-includes_dir: "."
 collections:
   projects:
     output: true
+
+url: https://queekus.com

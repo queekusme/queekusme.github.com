@@ -2,7 +2,7 @@
   "name": "queekusdotcom",
   "scripts": {
     "start": "jekyll serve",
-    "dev": "jekyll serve --unpublished"
+    "dev": "jekyll serve --host 192.168.0.16 --unpublished --livereload --open-url"
   },
   "repository": {
     "type": "git",
