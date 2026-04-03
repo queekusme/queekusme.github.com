@@ -1,4 +1,5 @@
 {%- assign sub = page.permalink | split: "/" -%}
+{%- assign host = {{ site.url | replace "https://", "" }} -%}
 {%- if sub[1] == ".well-known" -%}
   {%- assign sub_parts = "" -%}
 {%- else -%}
@@ -10,7 +11,7 @@
     "https://www.w3.org/ns/did/v1",
     "https://w3id.org/security/suites/jws-2020/v1"
   ],
-  "id": "did:web:{{ site.url }}{{ sub_parts }}",
+  "id": "did:web:{{ host }}{{ sub_parts }}",
 {%- for method_type_pair in page.methods -%}
 {% if method_type_pair[1].length != 0 %}
   "{{ method_type_pair[0] }}": [
@@ -23,7 +24,7 @@
     {%- endif -%}
     {% if site.data.jwks[jwk_id] != nil %}
     {
-      "id": "did:web:{{ site.url }}{{ sub_parts }}#{{ jwk_id }}",
+      "id": "did:web:{{ host }}{{ sub_parts }}#{{ jwk_id }}",
       "type": "{{ site.data.jwks[jwk_id].type }}",
       "controller": "did:web:{{ site.url }}{{ sub_parts }}",
       "publicKeyJwk": {{ site.data.jwks[jwk_id].publicKeyJwk | jsonify }}{% if site.data.jwks[jwk_id].expires != nil %},
@@ -42,7 +43,7 @@
   "service": [
 {%- for service in page.services %}
     {
-      "id": "did:web:{{ site.url }}{{ sub_parts }}{{ service.id }}",
+      "id": "did:web:{{ host }}{{ sub_parts }}{{ service.id }}",
       "type": "{{ service.type }}",
       "serviceEndpoint": {{ service.serviceEndpoint | jsonify }}
     }{% unless forloop.last %},{% endunless -%}
