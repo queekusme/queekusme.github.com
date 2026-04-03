@@ -1,8 +1,8 @@
 {
   "name": "queekusdotcom",
   "scripts": {
-    "start": "jekyll serve",
-    "dev": "jekyll serve --host 192.168.0.15 --port 4000 --unpublished --livereload --open-url"
+    "start": "jekyll serve --livereload",
+    "dev": "jekyll serve --host 0.0.0.0 --port 4000 --unpublished --livereload --open-url"
   },
   "repository": {
     "type": "git",
