@@ -1,5 +1,5 @@
 {%- assign sub = page.permalink | split: "/" -%}
-{%- assign did_host = site.url | replace: "https://", "" -%}
+{%- assign did_host = site.url | replace: "https", "http" | replace: "http://", "" -%}
 {%- if sub[1] == ".well-known" -%}
   {%- assign sub_parts = "" -%}
 {%- else -%}
