@@ -1,4 +1,5 @@
 ---
+title: Projects
 layout: collection
 permalink: /projects/index.html
 collection: projects

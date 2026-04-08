@@ -2,9 +2,8 @@
 layout: default
 ---
 <div class="container">
-    {% assign featured_match = site[page.collection] | where: "title", page.featured %}
-    {% assign featured = featured_match[0] %}
-    {% if featured %}
+    {%- assign featured = site[page.collection] | where: "title", page.featured | first %}
+    {%- if featured %}
     <a href="{{ featured.url }}" class="card p-0 reset_width">
         <div class="card-header"><h3>Featured</h3></div>
         <div class="row g-0">
@@ -21,18 +20,18 @@ layout: default
             </div>
         </div>
     </a>
-    {% endif %}
+    {%- endif %}
     <h1>{{ page.collection | capitalize }}:</h1>
-    {% if page.rss %}
+    {%- if page.rss %}
     <p>subscribe <a href="{{ page.rss }}">via RSS</a></p>
-    {% endif %}
+    {%- endif %}
     <div class="list-group">
     {% for entry in site[page.collection] %}
-        {% if entry.permalink contains "index" %} {% continue %} {% endif %}
-        {% if entry.permalink contains "rss" %} {% continue %} {% endif %}
+        {%- if entry.permalink contains "index" %} {% continue %} {% endif %}
+        {%- if entry.permalink contains "rss" %} {% continue %} {% endif %}
         {%- capture pub_date %}{{entry.pub_date | date: '%s'}}{% endcapture %}
         {%- capture nowunix -%}{{'now' | date: '%s'}}{%- endcapture -%}
-        {%- if pub_date > nowunix -%} {% continue %} {% endif %}
+        {%- if pub_date > nowunix -%} {% continue %} {% endif -%}
         <a href="{{ entry.url }}" class="card reset_width list-group-item list-group-item-action m-0">
             <div class="row g-0">
                 <div class="col-md-10">
@@ -48,6 +47,6 @@ layout: default
                 </div>
             </div>
         </a>
-    {% endfor %}
+    {%- endfor %}
     </div>
 </div>
