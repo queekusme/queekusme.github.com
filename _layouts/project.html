@@ -14,7 +14,7 @@ layout: default
                 <div class="col">
                     <div
                         class="project_thumbnail"
-                        style="background-image: url('{{ image }}')"
+                        style="background-image: url('{{ image | split: "::" | first }}')"
                         onclick="OpenImageModal('{{ forloop.index0 }}')"
                     >
                         <i class="fa fa-magnifying-glass project_thumbnail_icon"></i>
@@ -50,7 +50,8 @@ layout: default
                     <div class="carousel-inner">
                         {% for image in page.photos %}
                         <div id="photo_{{ forloop.index0 }}" class="carousel-item">
-                            <img src="{{ image }}" class="d-block w-100">
+                            {% assign img_parts = image | split: "::" %}
+                            <img src="{{ img_parts | first }}" class="d-block w-100" alt="{{ img_parts[1] }}">
                         </div>
                         {% endfor %}
                     </div>

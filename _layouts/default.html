@@ -22,15 +22,17 @@ layout: null
                     <a href="/" style="text-decoration: none; color: inherit">queekus.com</a>
                 </span>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-                    {% if never %}
-                        <li class="nav-item px-5">
-                            <a class="nav-link" href="/projects/">Projects</a>
+                        {% for collection in site.collections %}
+                        {% if collection.files.size == 0 %}{% continue %}{% endif %}
+                        <li class="nav-item px-2">
+                            {% assign title_lower = page.title | downcase  %}
+                            <a class="nav-link{% if title_lower == collection.label %} active{% endif %}" href="/{{collection.label}}/">{{collection.label | capitalize}}</a>
                         </li>
-                    {% endif %}
+                        {% endfor %}
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarText">
@@ -47,6 +49,7 @@ layout: null
         <div class="container">
             &nbsp;
             {{ content }}
+            {{page.skip_collections}}
             &nbsp;
             {% if page.cite %}
             <h5>Citations</h5>
@@ -56,7 +59,14 @@ layout: null
                 {%- assign cite_key = citation_pair[0] -%}
                 {%- assign cite_value = citation_pair[1] -%}
 
-            <li class="list-group-item" id="cite-{{cite_key}}">[{{forloop.index}}] {{ cite_value }}</li>
+                {% assign checkArray = cite_value | split: "http" %}
+                {% assign checkArraySize = checkArray | size %}
+
+                {% if checkArraySize > 1 %}
+            <li class="list-group-item" id="cite-{{cite_key}}">[{{cite_key}}] <a target="_blank" rel="noopener noreferrer" href="{{cite_value}}">{{cite_value}}</a></li>
+                {% else %}
+            <li class="list-group-item" id="cite-{{cite_key}}">[{{cite_key}}] {{ cite_value }}</li>
+                {% endif %}
             {% endfor %}
             {% if page.cite %}
             </ul>
@@ -96,11 +106,10 @@ layout: null
             if(!noEffects && month === 3 && day === 1) // 1st April
                 document.getElementById("root").className = "april_fools";
 
-            var index = 1;
             for(const cite of document.querySelectorAll('cite'))
             {
                 const id = cite.dataset.id;
-                cite.innerText = `[${index}]`;
+                cite.innerText = `[${id}]`;
                 cite.onclick = () =>
                 {
                     const details = document.getElementById("cite-" + id);
@@ -113,8 +122,6 @@ layout: null
 
                     details.scrollIntoView()
                 }
-
-                index++;
             }
         </script>
     </body>

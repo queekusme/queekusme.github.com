@@ -1,11 +1,12 @@
 ---
+published: false
 layout: project
 permalink: /projects/test-project
 pub_date: 1st Jan 2026 00:00 +0000
 title: Test Project
 abstract: Test Test Test Test Test Test Test Test Test Test Test Test
 photos: # Examples for now...
-    - https://cdn.bap-software.net/2024/02/22165839/testdebug2.jpg
+    - https://cdn.bap-software.net/2024/02/22165839/testdebug2.jpg::foo
     - https://news-cdn.moonbeam.co/stargate/?q=25&w=750&p=%2FMaking%2DApplication%2DTesting%2Da%2DFirst%2DClass%2DCitizen%2DApp%2DDeveloper%2DMagazine%5Fgd5jd6gn%2Ejpg
     - https://cdn.bap-software.net/2023/10/softwaretesting1.jpg
 links:

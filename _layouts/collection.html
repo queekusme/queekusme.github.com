@@ -16,7 +16,8 @@ layout: default
                 </div>
             </div>
             <div class="col-md-2 d-none d-md-block d-lg-block d-xl-block">
-                <img src="{{ featured.photos[0] }}" class="img-fluid">
+                {% assign img_parts = featured.photos[0] | split: "::" %}
+                <img src="{{ img_parts | first }}" class="img-fluid" alt="{{ img_parts[1] }}">
             </div>
         </div>
     </a>
@@ -39,11 +40,12 @@ layout: default
                         <h5 class="card-title">{{ entry.title }}</h5>
                         <h6 class="card-subtitle mb-2 text-body-secondary">Tags: {{ entry.tags | join: ", " }}</h6>
                         <p class="card-text">{{ entry.abstract }}</p>
-                        <p class="card-text">{{ entry.content  | slice: 0, 100 }}...</p>
+                        <p class="card-text">{{ entry.content | strip_html | truncate: 100 }}</p>
                     </div>
                 </div>
                 <div class="col-md-2 d-none d-md-block d-lg-block d-xl-block">
-                    <img src="{{ entry.photos[0] }}" class="img-fluid">
+                    {% assign img_parts = entry.photos[0] | split: "::" %}
+                    <img src="{{ img_parts | first }}" class="img-fluid" alt="{{ img_parts[1] }}">
                 </div>
             </div>
         </a>
