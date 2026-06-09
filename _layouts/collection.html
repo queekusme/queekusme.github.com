@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="container">
     {%- assign featured = site[page.collection] | where: "title", page.featured | first %}
-    {%- if featured %}
+    {%- if never %}
     <a href="{{ featured.url }}" class="card p-0 reset_width">
         <div class="card-header"><h3>Featured</h3></div>
         <div class="row g-0">
