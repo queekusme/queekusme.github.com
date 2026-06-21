@@ -2,7 +2,7 @@
 layout: default
 ---
 {% for notice in site.data.notices %}
-<div class="notice alert alert-{{notice.kind}}" role="alert" data-start="{{notice.start_date}}" data-end="{{notice.end_date}}">
+<div class="notice alert alert-{{notice.type}}" role="alert" data-start="{{notice.start_date}}" data-end="{{notice.end_date}}">
     {{notice.text}}
 </div>
 {% endfor %}
@@ -18,6 +18,6 @@ layout: default
 </div>
 <script>
 	document.getElementsByClassName("notice")
-		.filter(notice => Date.now() < new Date(notice.dataset.start_time).getTime() || Date.now() > new Date(notice.dataset.end_time).getTime())
+		.filter(notice => Date.now() < new Date(notice.dataset.start).getTime() || Date.now() > new Date(notice.dataset.end).getTime())
     	.forEach(notice => notice.remove());
 </script>
