@@ -1,9 +1,9 @@
 ---
 layout: default
 ---
-{% for event in site.data.notice %}
-<div class="event alert alert-{{event.kind}}" role="alert" data-start="{{event.start_date}}" data-end="{{event.end_date}}">
-    {{event.text}}
+{% for notice in site.data.notices %}
+<div class="notice alert alert-{{notice.kind}}" role="alert" data-start="{{notice.start_date}}" data-end="{{notice.end_date}}">
+    {{notice.text}}
 </div>
 {% endfor %}
 <h5>My Links</h5>
@@ -17,7 +17,7 @@ layout: default
     </a>{% endfor %}
 </div>
 <script>
-	document.getElementsByClassName("event")
-		.filter(event => Date.now() < new Date(event.dataset.start_time).getTime() || Date.now() > new Date(event.dataset.end_time).getTime())
-    	.forEach(event => event.remove());
+	document.getElementsByClassName("notice")
+		.filter(notice => Date.now() < new Date(notice.dataset.start_time).getTime() || Date.now() > new Date(notice.dataset.end_time).getTime())
+    	.forEach(notice => notice.remove());
 </script>
