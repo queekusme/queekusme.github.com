@@ -17,7 +17,7 @@ layout: default
     </a>{% endfor %}
 </div>
 <script>
-	document.getElementsByClassName("notice")
+	[...document.getElementsByClassName("notice")]
 		.filter(notice => Date.now() < new Date(notice.dataset.start).getTime() || Date.now() > new Date(notice.dataset.end).getTime())
     	.forEach(notice => notice.remove());
 </script>
