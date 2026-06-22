@@ -26,13 +26,13 @@ layout: null
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-                        {% for collection in site.collections %}
-                        {% if collection.files.size == 0 %}{% continue %}{% endif %}
+                        {%- for collection in site.collections -%}
+                        {%-if collection.files.size == 0 -%}{% continue %}{% endif %}
                         <li class="nav-item px-2">
-                            {% assign title_lower = page.title | downcase  %}
+                            {%- assign title_lower = page.title | downcase  %}
                             <a class="nav-link{% if title_lower == collection.label %} active{% endif %}" href="/{{collection.label}}/">{{collection.label | capitalize}}</a>
                         </li>
-                        {% endfor %}
+                        {%- endfor %}
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarText">
@@ -48,13 +48,12 @@ layout: null
         </nav>
         <div class="container">
             &nbsp;
-            {{ content }}
-            {{page.skip_collections}}
+            {{content }}
             &nbsp;
-            {% if page.cite %}
+            {% if page.cite -%}
             <h5>Citations</h5>
             <ul class="list-group list-group-flush">
-            {% endif %}
+            {%- endif -%}
             {% for citation_pair in page.cite %}
                 {%- assign cite_key = citation_pair[0] -%}
                 {%- assign cite_value = citation_pair[1] -%}
@@ -62,15 +61,15 @@ layout: null
                 {% assign checkArray = cite_value | split: "http" %}
                 {% assign checkArraySize = checkArray | size %}
 
-                {% if checkArraySize > 1 %}
-            <li class="list-group-item" id="cite-{{cite_key}}">[{{cite_key}}] <a target="_blank" rel="noopener noreferrer" href="{{cite_value}}">{{cite_value}}</a></li>
-                {% else %}
-            <li class="list-group-item" id="cite-{{cite_key}}">[{{cite_key}}] {{ cite_value }}</li>
-                {% endif %}
-            {% endfor %}
-            {% if page.cite %}
+                {%- if checkArraySize > 1 -%}
+                <li class="list-group-item" id="cite-{{cite_key}}">[{{cite_key}}] <a target="_blank" rel="noopener noreferrer" href="{{cite_value}}">{{cite_value}}</a></li>
+                {%- else -%}
+                <li class="list-group-item" id="cite-{{cite_key}}">[{{cite_key}}] {{ cite_value }}</li>
+                {%- endif %}
+            {%- endfor -%}
+            {%- if page.cite %}
             </ul>
-            {% endif %}
+            {%- endif %}
             <div>
                 <p>&copy; Annabelle Kennedy</p>
                 <p class="snowflakes">Snowflakes by https://pajasevi.github.io/CSSnowflakes/</p>

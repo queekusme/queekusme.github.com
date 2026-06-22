@@ -7,10 +7,10 @@ layout: default
             <h1 class="display-4">{{page.title}}</h1>
             <p class="lead">{{ page.abstract }}</p>
         </div>
-        {% if page.photos %}
+        {%- if page.photos %}
         <div class="col">
             <div class="row">
-                {% for image in page.photos %}
+                {%- for image in page.photos %}
                 <div class="col">
                     <div
                         class="project_thumbnail"
@@ -20,23 +20,23 @@ layout: default
                         <i class="fa fa-magnifying-glass project_thumbnail_icon"></i>
                     </div>
                 </div>
-                {% endfor %}
+                {%- endfor %}
             </div>
         </div>
-        {% endif %}
+        {%- endif %}
     </div>
 </div>
 &nbsp;
 {{ content }}
 &nbsp;
-{% if page.links %}
+{% if page.links -%}
 <h5>Links</h5>
 <ul class="list-group list-group-flush">
-{% for link in page.links %}
+{%- for link in page.links %}
   <a href="{{link}}" class="list-group-item list-group-item-action project-link">{{link}}</a>
-{% endfor %}
+{%- endfor %}
 </ul>
-{% endif %}
+{%- endif %}
 
 <div class="modal fade" id="image_preview_modal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
@@ -48,12 +48,12 @@ layout: default
             <div class="modal-body">
                 <div id="photocarousel" class="carousel slide">
                     <div class="carousel-inner">
-                        {% for image in page.photos %}
+                        {%- for image in page.photos %}
                         <div id="photo_{{ forloop.index0 }}" class="carousel-item">
-                            {% assign img_parts = image | split: "::" %}
+                            {%- assign img_parts = image | split: "::" %}
                             <img src="{{ img_parts | first }}" class="d-block w-100" alt="{{ img_parts[1] }}">
                         </div>
-                        {% endfor %}
+                        {%- endfor %}
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#photocarousel" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
