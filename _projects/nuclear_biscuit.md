@@ -20,8 +20,6 @@ cite:
     acl: https://en.wikipedia.org/wiki/Access-control_list
 ---
 
-
-
 I started using a new piece of software which requires you to save a copy of the ACL<cite data-id="acl" /> token so you can retain access to it. In order to ensure I don't lose it I printed a copy out however didn't know how to ensure it remained some what protected.
 
 I was watching a film and saw the use of what is commonly referred to as the 'Nuclear Biscuit' and thought to myself "that would work". So i set out to design something which would work to fulfill this purpose.
