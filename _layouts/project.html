@@ -72,7 +72,7 @@ layout: default
 <script>
     function OpenImageModal(index)
     {
-        for(let i = 0; i < {{ page.photos.size }}; i++) // Error expected, due to liquid templating
+        for(let i = 0; i < {{ page.photos.size }}; i++)
             document.getElementById("photo_" + i).classList.remove("active");
 
         document.getElementById("photo_" + index).classList.add("active");
