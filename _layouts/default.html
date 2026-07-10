@@ -122,6 +122,21 @@ layout: null
                     details.scrollIntoView()
                 }
             }
+
+            const t = (t) => new Date(t).getTime();
+
+            function timehide(className)
+            {
+                [...document.getElementsByClassName(className)]
+                    .filter(n => {
+                        if(n.dataset.s !== undefined && Date.now() < t(n.dataset.s)) return true;
+                        if(n.dataset.e !== undefined && Date.now() > t(n.dataset.e)) return true;
+
+                        return false;
+                    })
+                    .forEach(n => n.remove());
+            }
+
         </script>
     </body>
 </html>

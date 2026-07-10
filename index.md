@@ -2,7 +2,10 @@
 layout: default
 ---
 {% for notice in site.data.notices %}
-<div class="notice alert alert-{{notice.type}}" role="alert" data-start="{{notice.start_date}}" data-end="{{notice.end_date}}">
+<div
+    class="notice alert alert-{{notice.type}}" role="alert"
+    data-s="{{notice.start_date | date_to_xmlschema}}"
+    data-e="{{notice.end_date | date_to_xmlschema}}">
     {{notice.text}}
 </div>
 {% endfor %}
@@ -17,7 +20,5 @@ layout: default
     </a>{% endfor %}
 </div>
 <script>
-	[...document.getElementsByClassName("notice")]
-		.filter(notice => Date.now() < new Date(notice.dataset.start).getTime() || Date.now() > new Date(notice.dataset.end).getTime())
-    	.forEach(notice => notice.remove());
+    window.addEventListener("load", (event) => { timehide("notice") });
 </script>

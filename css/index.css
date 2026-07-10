@@ -81,6 +81,7 @@
 .project-link
 {
     text-decoration: underline !important;
+    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1)) !important;
 }
 
 .project_thumbnail_icon
