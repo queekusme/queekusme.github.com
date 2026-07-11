@@ -1,7 +1,7 @@
 ---
 layout: project
 permalink: /projects/nuclear_biscuit
-pub_date: 8th July 2026 11:30 +0100
+pub_date: 2026-07-08 11:30 +0100
 title: 3D Printable Nuclear Biscuit
 abstract: In popular culture when the nuclear codes are required, a small plastic device is snapped open to allow access to the Nuclear Launch Codes. This is a 3D Printable recreation of that device.
 photos:

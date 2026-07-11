@@ -2,7 +2,7 @@
 published: false
 layout: project
 permalink: /projects/test-project
-pub_date: 1st Jan 2026 00:00 +0000
+date: 2026-01-01 00:00 +0000
 title: Test Project
 abstract: Test Test Test Test Test Test Test Test Test Test Test Test
 photos: # Examples for now...

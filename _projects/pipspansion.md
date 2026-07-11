@@ -1,7 +1,7 @@
 ---
 layout: project
 permalink: /projects/pipspansion
-pub_date: 9th June 2026 22:20 +0100
+pub_date: 2026-06-09 22:20 +0100
 title: Pipspansion
 abstract: A Hexpansion project which adds star trek inspired rank pips to the tildagon badge.
 photos:
