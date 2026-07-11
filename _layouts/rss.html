@@ -11,9 +11,6 @@
         {%- for post in site[page.collection] -%}
             {%- if post.permalink contains "index" -%} {% continue %} {% endif -%}
             {%- if post.permalink contains "rss" -%} {% continue %} {% endif %}
-            {%- capture pub_date %}{{post.pub_date | date: '%s'}}{% endcapture %}
-            {%- capture nowunix -%}{{'now' | date: '%s'}}{%- endcapture -%}
-            {%- if pub_date > nowunix -%} {% continue %} {% endif %}
         <item>
             <title>{{ post.title | xml_escape }}</title>
             <author>Queekusme</author>
