@@ -62,9 +62,9 @@ layout: null
                 {% assign checkArraySize = checkArray | size %}
 
                 {%- if checkArraySize > 1 -%}
-                <li class="list-group-item" id="cite-{{cite_key}}">[{{cite_key}}] <a target="_blank" rel="noopener noreferrer" href="{{cite_value}}">{{cite_value}}</a></li>
+                <li class="cite-list-item list-group-item" id="cite-{{cite_key}}">[{{cite_key}}] <a target="_blank" rel="noopener noreferrer" href="{{cite_value}}">{{cite_value}}</a></li>
                 {%- else -%}
-                <li class="list-group-item" id="cite-{{cite_key}}">[{{cite_key}}] {{ cite_value }}</li>
+                <li class="cite-list-item list-group-item" id="cite-{{cite_key}}">[{{cite_key}}] {{ cite_value }}</li>
                 {%- endif %}
             {%- endfor -%}
             {%- if page.cite %}
@@ -104,6 +104,11 @@ layout: null
 
             if(!noEffects && month === 3 && day === 1) // 1st April
                 document.getElementById("root").className = "april_fools";
+
+            document.querySelectorAll('.cite-list-item').forEach(cite =>
+            {
+                if(document.querySelectorAll(`cite[data-id="${cite.id.split("-")[1]}"]`).length == 0) cite.remove()
+            });
 
             for(const cite of document.querySelectorAll('cite'))
             {
