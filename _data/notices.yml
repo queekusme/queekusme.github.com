@@ -1,9 +1,5 @@
 ---
 - type: info
-  start_date: "16th Jul 2026 10:00 +0100"
-  end_date: "19th Jul 2026 12:00 +0100"
-  text: Find me at EMF Camp 2026 DECT-QKME/7563 or Meshtastic-QKME
-- type: info
   start_date: "1st Jan 2026 10:00 +0100"
   end_date: "1st Jan 2026 10:05 +0100"
   text: Lorem ipsum dolor sit amet.

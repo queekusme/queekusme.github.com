@@ -22,6 +22,12 @@
   img: https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png
   img-alt: Github Logo
 
+- title: "@queekusme on Codeberg"
+  text: Check out my projects
+  href: https://codeberg.org/queekusme/
+  img: https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Codeberg_logo.svg/1280px-Codeberg_logo.svg.png
+  img-alt: Codeberg Logo
+
 - title: Roller Derby Game History CV
   text: Check out my officiating history for Flat Track Roller Derby
   href: derby_game_history.html
