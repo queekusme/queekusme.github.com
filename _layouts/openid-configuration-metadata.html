@@ -1,0 +1,9 @@
+{
+    "issuer": "{{ site.url }}/",
+    "jwks_uri": "{{ site.url }}/.well-known/jwks.json",
+    "authorization_endpoint": "{{ site.url }}{{ page.authorization_endpoint }}",
+    "token_endpoint": "{{ site.url }}{{ page.token_endpoint }}",
+    "response_types_supported": {{ page.response_types_supported | jsonify }},
+    "subject_types_supported": {{ page.subject_types_supported | jsonify }},
+    "id_token_signing_alg_values_supported": {{ page.id_token_signing_alg_values_supported | jsonify }}
+}
