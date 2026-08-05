@@ -1,0 +1,20 @@
+---
+layout: robots
+permalink: /robots.txt
+entries:
+  - useragents:
+      - "*"
+    disallow:
+      - /
+    contentsignals: "ai-train=no, search=no, ai-input=no"
+    comment: "Y'all are generally annoying tbf..."
+  - useragents:
+      - "googlebot"
+      - "bingbot"
+    disallow:
+      - "/.well-known/"
+      - "/test/"
+    contentsignals: "ai-train=no, search=yes, ai-input=no"
+    crawl_delay: 10 seconds
+    comment: "You're on thin ice as is... but I'll allow you a crumb..."
+---

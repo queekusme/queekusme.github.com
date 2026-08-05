@@ -1,0 +1,19 @@
+# https://www.robotstxt.org/robotstxt.html
+{%- for entry in page.entries %}
+    {% if entry.comment %}
+# {{ entry.comment }}
+    {%- endif -%}
+    {% for agent in entry.useragents %}
+User-agent: {{ agent }}
+    {%- endfor -%}
+    {%- if entry.contentsignals %}
+Content-Signal: {{ entry.contentsignals }}
+    {%- endif -%}
+    {%- if entry.crawl_delay %}
+Crawl-delay: {{ entry.crawl_delay }}
+    {%- endif -%}
+    {%- for disallow in entry.disallow %}
+Disallow: {{ disallow }}
+    {%- endfor -%}
+
+{% endfor %}
