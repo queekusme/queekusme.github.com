@@ -129,3 +129,8 @@ cite
     animation-name: citeHighlight;
     animation-duration: 5s;
 }
+
+.hide
+{
+    display: none;
+}

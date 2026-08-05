@@ -5,7 +5,7 @@ layout: default
     <div class="row">
         <div class="col">
             <h1 class="display-4">{{page.title}}</h1>
-            <p class="lead">{{ page.abstract }}</p>
+            <p class="lead d-none d-sm-block d-md-block d-lg-block d-xl-block">{{ page.abstract }}</p>
         </div>
         {%- if page.photos %}
         <div class="col">
@@ -26,6 +26,7 @@ layout: default
         {%- endif %}
     </div>
 </div>
+<p class="lead d-sm-none">{{ page.abstract }}</p>
 &nbsp;
 {{ content }}
 &nbsp;

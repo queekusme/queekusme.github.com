@@ -140,6 +140,9 @@ layout: null
                         return false;
                     })
                     .forEach(n => n.remove());
+
+                // remaining notices
+                [...document.getElementsByClassName(className)].forEach(n => n.classList.remove("hide"));
             }
 
         </script>

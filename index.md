@@ -3,7 +3,7 @@ layout: default
 ---
 {% for notice in site.data.notices %}
 <div
-    class="notice alert alert-{{notice.type}}" role="alert"
+    class="notice alert alert-{{notice.type}} hide" role="alert"
     data-s="{{notice.start_date | date_to_xmlschema}}"
     data-e="{{notice.end_date | date_to_xmlschema}}">
     {{notice.text}}
