@@ -15,6 +15,15 @@ layout: null
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
         <link href="/css/sticker.css" rel="stylesheet">
         <link href="/css/index.css" rel="stylesheet">
+        <script>
+            function urlParam(){ var kv = []; location.search.replace("?", "").split("&").forEach((pair) => { var kvPair = pair.split("="); kv[kvPair[0]] = kvPair[1]; } ); return kv; }
+        </script>
+        <style>
+            .fa-ghost
+            {
+                opacity: 0.33;
+            }
+        </style>
     </head>
     <body id="root">
         <nav class="navbar navbar-expand-lg bg-info-subtle">
@@ -73,37 +82,57 @@ layout: null
             {%- endif %}
             <div>
                 <p>&copy; Annabelle Kennedy</p>
-                <p class="snowflakes">Snowflakes by https://pajasevi.github.io/CSSnowflakes/</p>
+                <p class="halloween halloween-orange">Happy Halloween from queekus.com, uses </p>
+                <p class="snowflakes">Falling Snowflakes by https://pajasevi.github.io/CSSnowflakes/</p>
+                <p class="halloween">Falling Ghosts uses code from Snowflakes by https://pajasevi.github.io/CSSnowflakes/</p>
             </div>
         </div>
         <div class="snowflakes" aria-hidden="true">
-            <div class="snowflake"><i class="fa-solid fa-snowflake"></i></div>
-            <div class="snowflake"><i class="fa-regular fa-snowflake"></i></div>
-            <div class="snowflake"><i class="fa-solid fa-snowflake"></i></div>
-            <div class="snowflake"><i class="fa-regular fa-snowflake"></i></div>
-            <div class="snowflake"><i class="fa-solid fa-snowflake"></i></div>
-            <div class="snowflake"><i class="fa-regular fa-snowflake"></i></div>
-            <div class="snowflake"><i class="fa-solid fa-snowflake"></i></div>
-            <div class="snowflake"><i class="fa-regular fa-snowflake"></i> </div>
-            <div class="snowflake"><i class="fa-solid fa-snowflake"></i></div>
-            <div class="snowflake"><i class="fa-regular fa-snowflake"></i></div>
-            <div class="snowflake"><i class="fa-solid fa-snowflake"></i></div>
-            <div class="snowflake"><i class="fa-regular fa-snowflake"></i></div>
-            <div class="snowflake"><i class="fa-solid fa-snowflake"></i></div>
+            <div class="falling_entity"><i class="fa-solid fa-snowflake"></i></div>
+            <div class="falling_entity"><i class="fa-regular fa-snowflake"></i></div>
+            <div class="falling_entity"><i class="fa-solid fa-snowflake"></i></div>
+            <div class="falling_entity"><i class="fa-regular fa-snowflake"></i></div>
+            <div class="falling_entity"><i class="fa-solid fa-snowflake"></i></div>
+            <div class="falling_entity"><i class="fa-regular fa-snowflake"></i></div>
+            <div class="falling_entity"><i class="fa-solid fa-snowflake"></i></div>
+            <div class="falling_entity"><i class="fa-regular fa-snowflake"></i> </div>
+            <div class="falling_entity"><i class="fa-solid fa-snowflake"></i></div>
+            <div class="falling_entity"><i class="fa-regular fa-snowflake"></i></div>
+            <div class="falling_entity"><i class="fa-solid fa-snowflake"></i></div>
+            <div class="falling_entity"><i class="fa-regular fa-snowflake"></i></div>
+            <div class="falling_entity"><i class="fa-solid fa-snowflake"></i></div>
+        </div>
+        <div class="halloween">
+            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
+            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
+            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
+            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
+            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
+            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
+            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
+            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
+            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
+            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
+            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
+            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
+            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script>
-            function urlParam(){ var kv = []; location.search.replace("?", "").split("&").forEach((pair) => { var kvPair = pair.split("="); kv[kvPair[0]] = kvPair[1] ? JSON.parse(kvPair[1]) : undefined; } ); return kv; }
-
             const month = new Date(Date.now()).getMonth();
             const day = new Date(Date.now()).getDate();
 
             const noEffects = "no_effects" in urlParam();
 
-            if(noEffects || ![10, 11, 0].includes(month)) // November, december and January
+            const showEffect = urlParam()["show_effect"];
+
+            if(showEffect !== "snowflakes" && (noEffects || ![11, 0].includes(month))) // December and January
                 document.querySelectorAll('.snowflakes').forEach(e => e.remove());
 
-            if(!noEffects && month === 3 && day === 1) // 1st April
+            if(showEffect !== "halloween" && (noEffects || (month !== 9 && day !== 31))) // 31 Oct
+                document.querySelectorAll('.halloween').forEach(e => e.remove());
+
+            if(showEffect === "april_fools" || (!noEffects && month === 3 && day !== 1)) // 1st April
                 document.getElementById("root").className = "april_fools";
 
             document.querySelectorAll('.cite-list-item').forEach(cite =>
