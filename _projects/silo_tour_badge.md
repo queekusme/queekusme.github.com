@@ -1,5 +1,5 @@
 ---
-published: false
+hidden: true
 layout: project
 permalink: /projects/silo_tour_badge
 # pub_date: 2026-08-28 15:10 +0100
