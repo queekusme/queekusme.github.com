@@ -34,7 +34,12 @@ layout: default
 <h5>Links</h5>
 <ul class="list-group list-group-flush">
 {%- for link in page.links %}
-  <a href="{{link}}" class="project-link list-group-item list-group-item-action">{{link}}</a>
+    {%- assign link_parts = link | split: "::" %}
+    {% if link_parts.size > 1 -%}
+  <a href="{{link_parts[0]}}" class="project-link list-group-item list-group-item-action">{{link_parts[1]}}</a>
+  {%- else -%}
+  <a href="{{link_parts[0]}}" class="project-link list-group-item list-group-item-action">{{link_parts[0]}}</a>
+    {%- endif %}
 {%- endfor %}
 </ul>
 {%- endif %}

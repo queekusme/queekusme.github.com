@@ -61,8 +61,8 @@ layout: null
             {{content }}
             &nbsp;
             {% if page.cite -%}
-            <h5>Citations</h5>
-            <ul class="list-group list-group-flush">
+            <h5 id="cite_head">Citations</h5>
+            <ul id="cite_list" class="list-group list-group-flush">
             {%- endif -%}
             {% for citation_pair in page.cite %}
                 {%- assign cite_key = citation_pair[0] -%}
@@ -139,6 +139,12 @@ layout: null
             {
                 if(document.querySelectorAll(`cite[data-id="${cite.id.split("-")[1]}"]`).length == 0) cite.remove()
             });
+
+            if(document.getElementById("cite_list").childElementCount <= 0)
+            {
+                document.getElementById("cite_list").remove();
+                document.getElementById("cite_head").remove();
+            }
 
             for(const cite of document.querySelectorAll('cite'))
             {
