@@ -41,6 +41,7 @@ layout: default
     {% for entry in collection %}
         {%- if entry.permalink contains "index" %} {% continue %} {% endif %}
         {%- if entry.permalink contains "rss" %} {% continue %} {% endif %}
+        {%- if entry.hidden -%} {% continue %} {% endif %}
         <a
             href="{{ entry.url }}"
             class="collection_item card reset_width list-group-item list-group-item-action m-0"

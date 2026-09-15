@@ -11,6 +11,7 @@
         {%- for post in site[page.collection] -%}
             {%- if post.permalink contains "index" -%} {% continue %} {% endif -%}
             {%- if post.permalink contains "rss" -%} {% continue %} {% endif %}
+            {%- if post.hidden -%} {% continue %} {% endif %}
         <item>
             <title>{{ post.title | xml_escape }}</title>
             <author>Queekusme</author>
