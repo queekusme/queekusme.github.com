@@ -140,7 +140,7 @@ layout: null
                 if(document.querySelectorAll(`cite[data-id="${cite.id.split("-")[1]}"]`).length == 0) cite.remove()
             });
 
-            if(document.getElementById("cite_list")?.childElementCount ?? 0 <= 0)
+            if((document.getElementById("cite_list")?.childElementCount ?? 0) <= 0)
             {
                 document.getElementById("cite_list")?.remove();
                 document.getElementById("cite_head")?.remove();
