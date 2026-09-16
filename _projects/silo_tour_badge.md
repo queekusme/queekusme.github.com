@@ -6,18 +6,30 @@ permalink: /projects/silo_tour_badge
 title: Silo Tour Badge
 abstract: A 3D Printable badge matching the ones worn by those on the Silo Tour in Season 3 of the Apple TV Series Silo.
 photos:
-    - https://www.nopcommerce.com/images/thumbs/0005720_coming-soon-page_550.jpeg::Coming Soon
+    - images/silo_tour_badge/silo_tour_badge1.png::3D Printed Silo 18 Tour Badge
+    - images/silo_tour_badge/pact_logo.svg::Recreation of The Pact Logo, as exported from my OpenSCAD Recreation
+    - images/silo_tour_badge/silo_tour_btc_crop.jpg::Crop from a behind the scenes photo of the Silo 18 Tour badge
 links:
     - https://tv.apple.com/gb/show/silo/umc.cmc.3yksgc857px0k0rqe5zd4jice::Watch Silo on Apple TV
+    - https://www.youtube.com/watch?v=N7i_j2voO0s::Silo — Peter Gabriel's Sound Check | Season 3 Scene | Apple TV
+    - https://www.youtube.com/watch?v=xJrnnUsHrZ8::Silo — The Beginning of the End [SPOILER WARNING] | Season 3 Episode 9 Ending Scene
 tags:
     - Silo
     - Apple TV
 cite:
-    tbd: https://queekus.com/
+    the_pact: https://silo.fandom.com/wiki/The_Pact
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+In Silo Season 3 Episode 9 we see the event which leads up towards everyone entering the silos for the first time. During the preceding event which is the first public showing and tours of the silo we see characters wear badges which show the silo they will be touring.
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+This is a 3d print recreation of that badge, created by hand from stills and clips from the episode. The outcome was to create something which visually looked similar if not was as close to screen accurate as possible, until we get more information about these badges such as from behind the scenes images and/or design specs, this is the best we can do.
 
-At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+I started out by recreating The Pact<cite data-id="the_pact" /> logo shown at the top. This is something that we have seen multiple times and has been used as part of marketing campaigns so was very easy to find high res stills of. I recreated this using OpenSCAD so that I could create both an SVG for 2d use as well as an extruded version which could be used as a modifier in Bambu Studio to inset the logo onto a badge base as a separate colour.
+
+I guessed at the size of the badge being 10x15 cm based on the scaling shown in stills and clips, the badge appears to be about this size however I fully accept this may be wildly inaccurate. The goal was to create as good of a replica as possible, not to create a screen accurate replica.
+
+The font used for the silo numbers on the badge isn't clear however Heiti SC matched the font close enough that I decided to keep with that as the font. I know it isn't the font used which can be compared to the image above from the show, however if we find a more accurate font I can update that in the future.
+
+The print was done using Bambu PLA in Jade White with ESun PLA+ in Bone White for the elements. Although the bone white colour is very likely inaccurate, with the actual colour being either a very light grey or beige, this was the best choice I had on hand to recreate the badge as close as I could. Again, should more up to date pictures/video shed more light on the colour (no pun intended) then a more accurate badge can be created in the future. The actual badge does look like laser engraved metal, however this is only a personal observation.
+
+Print files not yet available for download... Check back here in the future to find out when they are, or check my MakerWorld Account
