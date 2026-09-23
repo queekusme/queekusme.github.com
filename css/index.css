@@ -7,9 +7,9 @@
 
 .card
 {
-    margin: 10px auto;
+    margin: 10px 10px !important;
     padding: 20px;
-    width: 20rem;
+    width: 31.8%;
 
     text-decoration: none;
 }

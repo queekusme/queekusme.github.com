@@ -4,4 +4,15 @@ collections:
   projects:
     output: true
 
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      falling_count: 13
+      falling:
+          - snowflakes::snowflake::solid/regular
+          - halloween::ghost::solid
+
 url: https://queekus.com

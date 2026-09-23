@@ -87,36 +87,20 @@ layout: null
                 <p class="halloween">Falling Ghosts uses code from Snowflakes by https://pajasevi.github.io/CSSnowflakes/</p>
             </div>
         </div>
-        <div class="snowflakes" aria-hidden="true">
-            <div class="falling_entity"><i class="fa-solid fa-snowflake"></i></div>
-            <div class="falling_entity"><i class="fa-regular fa-snowflake"></i></div>
-            <div class="falling_entity"><i class="fa-solid fa-snowflake"></i></div>
-            <div class="falling_entity"><i class="fa-regular fa-snowflake"></i></div>
-            <div class="falling_entity"><i class="fa-solid fa-snowflake"></i></div>
-            <div class="falling_entity"><i class="fa-regular fa-snowflake"></i></div>
-            <div class="falling_entity"><i class="fa-solid fa-snowflake"></i></div>
-            <div class="falling_entity"><i class="fa-regular fa-snowflake"></i> </div>
-            <div class="falling_entity"><i class="fa-solid fa-snowflake"></i></div>
-            <div class="falling_entity"><i class="fa-regular fa-snowflake"></i></div>
-            <div class="falling_entity"><i class="fa-solid fa-snowflake"></i></div>
-            <div class="falling_entity"><i class="fa-regular fa-snowflake"></i></div>
-            <div class="falling_entity"><i class="fa-solid fa-snowflake"></i></div>
+        {%- for falling in page.falling %}
+            {%- assign falling_parts = falling | split: "::" %}
+            {%- assign variations = falling_parts[2] | split: "/" %}
+            {%- assign v_length = variations | size %}
+            {%- assign count = page.falling_count | minus: 1 %}
+        <div class="{{falling_parts[0]}}" aria-hidden="true">
+            {%- for i in (0..count) %}
+
+            {%- capture v_index_raw %}{{ i | modulo: v_length }}{% endcapture %}
+            {%- assign v_index = v_index_raw | plus: 0 %}
+            <div class="falling_entity"><i class="fa-{{variations[v_index]}} fa-{{falling_parts[1]}}"></i></div>
+            {%- endfor %}
         </div>
-        <div class="halloween">
-            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
-            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
-            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
-            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
-            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
-            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
-            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
-            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
-            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
-            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
-            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
-            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
-            <span class="falling_entity"><i class="fa-solid fa-ghost"></i></span>
-        </div>
+        {%- endfor %}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script>
             const month = new Date(Date.now()).getMonth();
