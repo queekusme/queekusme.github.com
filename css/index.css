@@ -12,7 +12,7 @@
 }
 
 .col { margin: 10px 10px; }
-.col-12 { width: 96%; }
+.col-12 { width: 94.6%; }
 @media (min-width: 576px) { .col-sm-4 { width: 100%; } }
 @media (min-width: 768px) { .col-md-4 { width: 30.5%; } }
 @media (min-width: 992px) {.col-lg-4 { width: 31.2%; } }
