@@ -21,7 +21,7 @@ cols: 3
         <img src="{{ card.img }}" class="card-img-top queekus-card-image" alt="{{ card.img-alt }}">
         <div class="card-body">
             <h5 class="card-title">{{ card.title }}</h5>
-            <p class="card-text">{{ card.text }}</p>{{col_index}}-{{col_index_end}}
+            <p class="card-text">{{ card.text }}</p>
         </div>
     </a>
 {%- if col_index == col_index_end %}
