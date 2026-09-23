@@ -12,12 +12,15 @@ cols: 3
 {% endfor %}
 <h5>My Links</h5>
 {%- for card in site.data.cards -%}
+{% unless site.unpublished %}
+    {%- if card.hidden %} {% continue %} {% endif %}
+{% endunless %}
 {%- capture col_index %}{{ forloop.index0 | modulo: page.cols }}{% endcapture -%}
 {%- capture col_index_end %}{{ page.cols | minus: 1 }}{% endcapture -%}
 {%- if col_index == "0" -%}
 <div class="row">
 {%- endif %}
-    <a href="{{ card.href }}" target="_blank" class="card col col-4">
+    <a href="{{ card.href }}" target="_blank" class="card col col-12 col-sm-4 col-md-4 col-lg-4">
         <img src="{{ card.img }}" class="card-img-top queekus-card-image" alt="{{ card.img-alt }}">
         <div class="card-body">
             <h5 class="card-title">{{ card.title }}</h5>

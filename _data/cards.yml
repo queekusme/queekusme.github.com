@@ -33,3 +33,10 @@
   href: https://makerworld.com/en/@queekusme
   img: https://makerworld.bblmw.com/makerworld/static/og-icon.jpeg
   img-alt: MakerWorld Logo
+
+- title: "@queekusme on TEST"
+  text: TEST TEST TEST TEST
+  href: https://test.com/en/@queekusme
+  img: https://cdn-icons-png.flaticon.com/512/1581/1581942.png
+  img-alt: Test Logo
+  hidden: true

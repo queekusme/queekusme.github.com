@@ -1,18 +1,22 @@
 .queekus-card-image
 {
     margin: 0 auto;
-    width: 10rem;
+    width: 8rem;
     height: auto;
 }
 
 .card
 {
-    margin: 10px 10px !important;
     padding: 20px;
-    width: 31.8%;
-
     text-decoration: none;
 }
+
+.col { margin: 10px 10px; }
+.col-12 { width: 96%; }
+@media (min-width: 576px) { .col-sm-4 { width: 100%; } }
+@media (min-width: 768px) { .col-md-4 { width: 30.5%; } }
+@media (min-width: 992px) {.col-lg-4 { width: 31.2%; } }
+@media (min-width: 1400px) { .col-lg-4 { width: 31.8%; } }
 
 .april_fools
 {
