@@ -37,5 +37,15 @@ Print files not yet available for download ly... Check back here in the future t
 
 I will be attending [Epic Comic Con](https://www.forthefans.uk/) The weekend of 26-27 September 2026, an event for which the actress who plays Helen Drew (Jessica Henwick) will be attending, I intend to ask about the badge to ascertain some more accurate information. I will share anything here once available.
 
-Update 26 Sept: After speaking eith Jessica Henwick (Helen) I have a couple of changes I will be making. She was rather impressed with this version, stating its the most accurate one she has seen and made the following recommendstions:
-- Slight
+<b>Update 26 Sept:</b>
+
+After speaking with Jessica Henwick (Helen) at comic-con I have a couple of changes I will be making. She was rather impressed with this version, stating its the most accurate recreation she has seen and made the following recommendations:
+- Slightly smaller in width and height, as well as the badge itself being thicker (mainly as I wanted to save on fillament)
+- The contents (silo number/pact logo) should fill the badge a little more
+- The badges had a bit more of a metallic effect (I will be getting some new fillament)
+
+She mentioned she did take a photo of the actual prop, but couldnt find the photo in her camera roll
+
+Some other notes:
+- Despite looking like a different colour, all badges were the same, any colour variation in the episode was probably more the colour grade than anything else
+- I will look to create a more accurate font which better reflects the one used in the series
