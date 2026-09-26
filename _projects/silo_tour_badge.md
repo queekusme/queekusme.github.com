@@ -33,7 +33,7 @@ The font used for the silo numbers on the badge isn't clear however Heiti SC mat
 
 The print was done using Bambu PLA in Jade White with ESun PLA+ in Bone White for the elements. Although the bone white colour is also very likely inaccurate, with the actual colour being either a very light grey or beige, this was the best choice I had on hand to recreate the badge as close as I could. Again, should more up to date pictures/video shed more light on the colour (no pun intended) then a more accurate badge can be created in the future. The actual badge does look like laser engraved metal, however this is only a personal observation.
 
-Print files not yet available for download ly... Check back here in the future to find out when they are, or check my MakerWorld Account.
+Print files not yet available for download... Check back here in the future to find out when they are, or check my MakerWorld Account.
 
 I will be attending [Epic Comic Con](https://www.forthefans.uk/) The weekend of 26-27 September 2026, an event for which the actress who plays Helen Drew (Jessica Henwick) will be attending, I intend to ask about the badge to ascertain some more accurate information. I will share anything here once available.
 
