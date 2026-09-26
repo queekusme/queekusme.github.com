@@ -81,7 +81,7 @@ permalink: /projects/homebrew_tracker.html
     {
         if(children === undefined) children = [];
 
-        const elem = document.createElement("div");
+        const elem = document.createElement(kind);
 
         if(Array.isArray(classes)) elem.classList.add(...classes);
         else elem.className = classes;
