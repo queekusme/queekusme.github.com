@@ -96,10 +96,12 @@ permalink: /projects/homebrew_tracker.html
     {
         const split_group = simpleCreate("span", "btn-group");
         split_group.role = "group";
+        
+        const available = split.available && urlParam()["locked"] !== "true";
 
         for(const amount of split_sizes)
         {
-            if(split.available === false || split.amount <= amount) continue;
+            if(available === false || split.amount <= amount) continue;
 
             const button = simpleCreate("button", ["btn", "btn-outline-primary"], [document.createTextNode(`${amount.toString()}L`)]);
             button.dataset.split = amount.toString();
@@ -109,7 +111,7 @@ permalink: /projects/homebrew_tracker.html
             split_group.appendChild(button);
         }
 
-        if(split.available === true)
+        if(available === true)
         {
             const button = simpleCreate("button", ["btn", "btn-outline-primary"], [document.createTextNode(`🔒`)]);
 
