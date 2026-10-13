@@ -107,7 +107,7 @@ layout: null
             if(showEffect !== "snowflakes" && (noEffects || ![11, 0].includes(month))) // December and January
                 document.querySelectorAll('.snowflakes').forEach(e => e.remove());
 
-            if(showEffect !== "halloween" && (noEffects || (month !== 9 && day !== 31))) // 31 Oct
+            if(showEffect !== "halloween" && (noEffects || month !== 9 || day !== 31)) // 31 Oct
                 document.querySelectorAll('.halloween').forEach(e => e.remove());
 
             if(showEffect === "april_fools" || (!noEffects && month === 3 && day !== 1)) // 1st April
