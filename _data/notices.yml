@@ -1,8 +1,10 @@
 ---
 - type: info
   start_date: "1st Jan 2026 10:00 +0100"
-  end_date: "1st Jan 2026 10:05 +0100"
+  end_date: "1st Jan 202 10:05 +0100"
   text: Lorem ipsum dolor sit amet.
 - type: info
-  start_date: "3rd Sept 2026 20:40 +0100"
-  text: Due to a message I received from someone very high up in the Scotland Roller Derby community, I am quitting officiating Roller Derby at all levels. This decision has not been taken lightly, however due to the content of the aforementioned message I can no longer continue to volunteer my time in good faith. Thank you to all the people who have made my officiating experience wonderful, but I must now depart.
+  start_date: "27th October 2026 13:00 +0000"
+  end_date: "1st January 2027 00:00 +0000"
+  text: Notice of departure from Roller Derby
+  link: /derby_game_history_notice.html

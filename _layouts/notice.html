@@ -2,11 +2,13 @@
 layout: default
 ---
 <div class="jumbotron">
-    <h1 class="display-4">Before Continuing to {{page.target}} </h1>
+    <h1 class="display-4">{% if page.standalone %}{{page.target}}{% else %}Before Continuing to {{page.target}}{% endif %}</h1>
     <p class="lead">{{ content }}</p>
     <hr class="my-4">
 {% if page.last %}
     <p>{{ page.last }}</p>
 {% endif %}
-    <a class="btn bg-info-subtle btn-lg" href="{{page.redirect}}" role="button">Continue to {{ page.target }}</a>
+    {% unless page.standalone %}
+        <a class="btn bg-info-subtle btn-lg" href="{{page.redirect}}" role="button">Continue to {{ page.target }}</a>
+    {% endunless %}
 </div>

@@ -7,7 +7,13 @@ cols: 3
     class="notice alert alert-{{notice.type}} hide" role="alert"
     data-s="{{notice.start_date | date_to_xmlschema}}"
     data-e="{{notice.end_date | date_to_xmlschema}}">
-    {{notice.text}}
+    <h4 class="mb-0">
+    {% if notice.link %}
+        <a class="plain_link" href="{{notice.link}}">{{notice.text}} <span class="fa fa-external-link float-end"></span></a>
+    {% else %}
+        {{notice.text}}
+    {% endif %}
+    </h4>
 </div>
 {% endfor %}
 <h5>My Links</h5>
